@@ -3,7 +3,7 @@ Let's make a game!
     by:Incremental
     desc:You find cockroach in your garden, you decide to smash it with an object, it dies. More cockroaches arrive, you kill them. Even more cockroaches arrive. Angry, you decide to form a team to destroy every single cockroach forever.<//><b>version 1:</b><//><.>13 buildings<.>lots of upgrades<.>a prestige system (already wow)<.>a few achievements
     created:7/8/2020
-    updated:17/12/2020
+    updated:18/12/2020
     version:1
  
 Settings
@@ -1970,59 +1970,120 @@ Achievements
  
     *1coin
         name:Coin Holder
-        desc:Have <b>1</b> coin.
-        req:1 coin
+        desc:Have <b>1</b> coin all time.
+        req:1 coin:earned
         tag:cheevo
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
     *100coin
         name:Coin Grabber
-        desc:Have <b>100</b> coins.
-        req:100 coin
+        desc:Have <b>100</b> coins all time.
+        req:100 coin:earned
         tag:cheevo
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
     *10Kcoin
         name:Coin Hoarder
-        desc:Have <b>10K</b> coins.
-        req:10000 coin
+        desc:Have <b>10K</b> coins all time.
+        req:10000 coin:earned
         tag:cheevo
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
     *100Kcoin
         name:Coin Saver
-        desc:Have <b>100K</b> coins.
-        req:100000 coin
+        desc:Have <b>100K</b> coins all time.
+        req:100000 coin:earned
         tag:cheevo
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
     *10Mcoin
         name:Coin Milestone
-        desc:Have <b>10M</b> coins.
-        req:10000000 coin
+        desc:Have <b>10M</b> coins all time.
+        req:10000000 coin:earned
         tag:cheevo
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
     *100Mcoin
         name:Coin Accumulator
-        desc:Have <b>100M</b> coins.
-        req:100000000 coin
+        desc:Have <b>100M</b> coins all time.
+        req:100000000 coin:earned
         tag:cheevo
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
     *10Bcoin
         name:Coin Magpie
-        desc:Have <b>10B</b> coins.
-        req:10000000000 coin
+        desc:Have <b>10B</b> coins all time.
+        req:10000000000 coin:earned
         tag:cheevo
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
     *100Bcoin
         name:Coin Scavenger
-        desc:Have <b>100B</b> coins.
-        req:100000000000 coin
+        desc:Have <b>100B</b> coins all time.
+        req:100000000000 coin:earned
         tag:cheevo
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
     *10Tcoin
         name:Can't Find The Coin Slot
-        desc:Have <b>10T</b> coins.
-        req:1e13 coin
+        desc:Have <b>10T</b> coins all time.
+        req:1e13 coin:earned
         tag:cheevo
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
  
+    *1coinpersec
+        name:Starting out
+        desc:Produce <b>1</b> coin per second.
+        req:1 coin per second
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
+   *100coinpersec
+        name:Coin Housing
+        desc:Produce <b>100</b> coins per second.
+        req:100 coin per second
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
+   *10Kcoinpersec
+        name:Coin Mining
+        desc:Produce <b>10K</b> coins per second.
+        req:10000 coin per second
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
+   *10Mcoinpersec
+        name:In the coin business
+        desc:Produce <b>10M</b> coins per second.
+        req:10000000 coin per second
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
+   *10Bcoinpersec
+        name:Such progress
+        desc:Produce <b>10B</b> coins per second.
+        req:10000000000 coin per second
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
+ 
+   *m1roachpersec
+        name:Squish once
+        desc:Eradicate <b>1</b> cockroach per second.
+        req:-1 roach per second
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/roach.png
+   *m100roachpersec
+        name:It's like crushing soft Lego!
+        desc:Eradicate <b>100</b> cockroaches per second.
+        req:-100 roach per second
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/roach.png
+   *m10Kroachpersec
+        name:Roach Rage
+        desc:Eradicate <b>10K</b> cockroaches per second.
+        req:-10000 roach per second
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/roach.png
+   *m10Mroachpersec
+        name:Roachamillion
+        desc:Eradicate <b>10M</b> cockroaches per second.
+        req:-10000000 roach per second
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/roach.png
+   *m10Broachpersec
+        name:Honey, I shrunk the roach
+        desc:Eradicate <b>10B</b> cockroaches per second.
+        req:-10000000000 roach per second
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/roach.png
  
     *1human
         name:Single
