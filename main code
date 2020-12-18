@@ -1,0 +1,2177 @@
+Let's make a game!
+    name:Cockroach Crusher
+    by:Incremental
+    desc:You find cockroach in your garden, you decide to smash it with an object, it dies. More cockroaches arrive, you kill them. Even more cockroaches arrive. Angry, you decide to form a team to destroy every single cockroach forever.<//><b>version 1:</b><//><.>13 buildings<.>lots of upgrades<.>a prestige system (already wow)<.>a few achievements
+    created:7/8/2020
+    updated:17/12/2020
+    version:1
+ 
+Settings
+    background:https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQN6JNkZNl1vSxdAH5kup7tTh-m_F8JrRpRXQ&usqp=CAU
+    building cost increase:115%
+    building cost refund:0.01%
+    spritesheet:icons, 48 by 48, http://orteil.dashnet.org/cookieclicker/img/icons.png
+    stylesheet:stuff/bigBlue.css
+ 
+Layout
+    use default
+ 
+Buttons
+    *click
+        name:
+        desc:This gives coins and kills 1 cockroach per click
+        on click:anim icon wobble
+        on click:yield 1 coin
+        on click:yield -1 roach
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/cockroach%20button.png
+        class:bigButton hasFlares
+        icon class:shadowed
+        tooltip origin:bottom
+        tooltip class:red
+ 
+Resources
+    *coin
+        name:coins
+        desc:You can spend these on buildings
+        class:noBackground
+        show earned
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
+ 
+    *roach
+        name:cockroaches
+        desc:Get more buildings and upgrades to decrease the cockroach population!
+        start with:1000000000000 roach
+        class:noBackground
+        show earned
+        hidden when 0
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/roach.png
+ 
+    *roachSoul
+        name:roach souls
+        desc:You can spend these on prestige upgrades!
+        class:noBackground
+        show earned
+        hidden when 0
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/roach%20soul.png
+ 
+    *humanp
+        name:Humans Yield
+        desc:How much humans make every second.
+        text:[humanp:ps] coin/s
+        always hidden
+        icon:
+ 
+    *humanc
+        name:Humans Yield 2
+        desc:How much humans kill the cockroaches every second.
+        text:[humanc:ps] roach/s
+        always hidden
+        icon:
+ 
+    *stickp
+        name:Stick Yield
+        desc:How much sticks make every second.
+        text:[stickp:ps] coin/s
+        always hidden
+        icon:
+ 
+    *stickc
+        name:Stick Yield 2
+        desc:How much sticks kill the cockroaches every second.
+        text:[stickc:ps] roach/s
+        always hidden 
+        icon:
+ 
+    *sledgep
+        name:Sledgehammer Yield
+        desc:How much sledgehammers make every second.
+        text:[sledgep:ps] coin/s
+        always hidden
+        icon:
+ 
+    *sledgec
+        name:Sledgehammer Yield 2
+        desc:How much sledgehammers kill the cockroaches every second.
+        text:[sledgec:ps] roach/s
+        always hidden
+        icon:
+ 
+    *gunp
+        name:Gun Yield
+        desc:How much guns make every second.
+        text:[gunp:ps] coin/s
+        always hidden
+        icon:
+ 
+    *gunc
+        name:Gun Yield 2
+        desc:How much guns kill the cockroaches every second.
+        text:[gunc:ps] roach/s
+        always hidden
+        icon:
+ 
+    *bombp
+        name:Bomb Yield 
+        desc:How much bombs make every second.
+        text:[bombp:ps] coin/s
+        always hidden
+        icon:
+ 
+    *bombc
+        name:Bomb Yield 2
+        desc:How much bombs kill the cockroaches every second.
+        text:[bombc:ps] roach/s
+        always hidden
+        icon:
+ 
+    *scythep
+        name:Scythe Yield
+        desc:How much scythes make every second.
+        text:[scythep:ps] coin/s
+        always hidden
+        icon:
+ 
+    *scythec
+        name:Scythe Yield 2
+        desc:How much scythe kill the cockroaches every second.
+        text:[scythec:ps] roach/s
+        always hidden
+        icon:
+ 
+    *minep
+        name:Minefield Yield
+        desc:How much minefields make every second.
+        text:[minep:ps] coin/s
+        always hidden
+        icon:
+ 
+    *minec
+        name:Minefield Yield 2
+        desc:How much minefields kill the cockroaches every second.
+        text:[minec:ps] roach/s 
+        always hidden
+        icon:
+ 
+    *missilep
+        name:Missile Yield
+        desc:How much missiles make every second.
+        text:[missilep:ps] coin/s
+        always hidden
+        icon:
+ 
+    *missilec
+        name:Missile Yield 2
+        desc:How much missiles kill the cockroaches every second.
+        text:[missilec:ps] roach/s
+        always hidden
+        icon:
+ 
+    *wizardp
+        name:Wizard Yield 
+        desc:How much wizards make every second.
+        text:[wizardp:ps] coin/s
+        always hidden
+        icon:
+ 
+    *wizardc
+        name:Wizard Yield 2
+        desc:How much wizards kill the cockroaches every second.
+        text:[wizardc:ps] roach/s
+        always hidden
+        icon:
+ 
+    *brutep
+        name:Brute Yield
+        desc:How much mutant brutes make every second.
+        text:[brutep:ps] coin/s
+        always hidden
+        icon:
+ 
+    *brutec
+        name:Brute Yield 2
+        desc:How much mutant brutes kill the cockroaches every second.
+        text:[brutec:ps] roach/s
+        always hidden
+        icon:
+ 
+    *ttbp
+        name:Time Travel Blaster Yield
+        desc:How much time travel blasters make every second.
+        text:[ttbp:ps] coin/s
+        always hidden
+        icon:
+ 
+    *ttbc
+        name:Time Travel Blaster Yield 2
+        desc:How much time travel blasters kill the cockroaches every second.
+        text:[ttbc:ps] roach/s
+        always hidden
+        icon:
+ 
+    *tep
+        name:Terminator Exterminator Yield 
+        desc:How much terminator exterminators make every second.
+        text:[tep:ps] coin/s
+        always hidden
+        icon:
+ 
+    *tec
+        name:Terminator Exterminator Yield 2
+        desc:How much terminator exterminators kill the cockroaches every second.
+        text:[tec:ps] roach/s
+        always hidden
+        icon:
+ 
+    *hodp
+        name:Hand of Death Yield
+        desc:How much hand of death make every second.
+        text:[hodp:ps] coin/s
+        always hidden
+        icon:
+ 
+    *hodc
+        name:Hand of Death Yield 2
+        desc:How much hand of death kill the cockroaches every second.
+        text:[hodc:ps] roach/s
+        always hidden
+        icon:
+ 
+    *soulFactp
+        name:Soul Factory Yield
+        desc:How much soul factories make every second.
+        text:[soulFactp:ps] roachSoul/s
+        always hidden
+        icon:
+ 
+Buildings
+    *TEMPLATE
+        on click:anim glow
+ 
+    *human
+        name:Humans
+        desc:Humans to squish cockroaches for you.<//><b>Base Effect:</b><.>Produces 0.2 coins and kills 0.4 cockroaches per second.<//><b>Effect:</b><.>Currently Makes <b>[humanp:ps]</b> coins every second.<.>Currently killing <b>[humanc:ps]</b> cockroaches every second.
+        cost:25 coin
+        on tick:yield 0.2 coin
+        on tick:yield 0.2 humanp
+        on tick:yield -0.4 roach
+        on tick:yield 0.4 humanc
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/human.png
+        unlocked
+ 
+    *stick
+        name:Sticks
+        desc:Sticks to crush the center of the cockroach.<//><b>Base Effect:</b><.>Produces 1 coins and kills 2 cockroaches per second.<//><b>Effect:</b><.>Currently Makes <b>[stickp:ps]</b> coins every second.<.>Currently killing <b>[stickc:ps]</b> cockroaches every second.
+        cost:175 coin
+        on tick:yield 1 coin
+        on tick:yield 1 stickp
+        on tick:yield -2 roach
+        on tick:yield 2 stickc
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/stick.png
+        unlocked
+ 
+    *sledge
+        name:Sledgehammers
+        desc:Sledgehammers to WHAM those little buggers!<//><b>Base Effect:</b><.>Produces 3 coins and kills 6 cockroaches per second.<//><b>Effect:</b><.>Currently Makes <b>[sledgep:ps]</b> coins every second.<.>Currently killing <b>[sledgec:ps]</b> cockraoches every second.
+        cost:3800 coin
+        on tick:yield 3 coin
+        on tick:yield 3 sledgep
+        on tick:yield -6 roach
+        on tick:yield 6 sledgec
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+        req:25 coin:earned 
+ 
+    *gun
+        name:Guns
+        desc:Guns to shoot cockroaches like a boss.<//><b>Base Effect:</b><.>Produces 40 coins and kills 80 cockroaches per second.<//><b>Effect:</b><.>Currently Makes <b>[gunp:ps]</b> coins every second.<.>Currently killing <b>[gunc:ps]</b> cockroaches every second.
+        cost:20500 coin
+        on tick:yield 40 coin
+        on tick:yield 40 gunp
+        on tick:yield -80 roach
+        on tick:yield 80 gunc
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/gun.png
+        req:175 coin:earned
+ 
+    *bomb
+        name:Bombs
+        desc:Bombs to explode cockroaches, have a bomb!<//><b>Base Effect:</b><.>Produces 1,100 coins and kills 2,200 cockroaches per second.<//><b>Effect:</b><.>Currently Makes <b>[bombp:ps]</b> coins every second.<.>Currently killing <b>[bombc:ps]</b> cockroaches every second.
+        cost:600000 coin
+        on tick:yield 1100 coin
+        on tick:yield 1100 bombp
+        on tick:yield -2200 roach
+        on tick:yield 2200 bombc
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
+        req:3800 coin:earned
+ 
+    *scythe
+        name:Scythes
+        desc:Scythes to slash those cockroaches to bits.<//><b>Base Effect:</b><.>Produces 15,000 coins and kills 30,000 cockroaches per second.<//><b>Effect:</b><.>Currently Makes <b>[scythep:ps]</b> coins every second.<.>Currently killing <b>[scythec:ps]</b> cockroaches every second.
+        cost:12500000 coin
+        on tick:yield 15000 coin
+        on tick:yield 15000 scythep
+        on tick:yield -30000 roach
+        on tick:yield 30000 scythec
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+ 
+    *mine
+        name:Minefields
+        desc:Minefields to surprise kill the cockroaches.<//><b> Base Effect:</b><.>Produces 180,000 coins and kills 360,000 cockroaches per second.<//><b>Effect:</b><.>Currently Makes <b>[minep:ps]</b> coins every second.<.>Currently killing <b>[minec:ps]</b> cockroaches every second.
+        cost:175000000 coin
+        on tick:yield 180000 coin
+        on tick:yield 180000 minep
+        on tick:yield -360000 roach
+        on tick:yield 360000 minec
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/minefield.png
+ 
+    *missile
+        name:Missiles
+        desc:Missiles to... yeah.<//><b>Base Effect:</b><.>Produces 5 million coins and kills 10 million cockroaches per second.<//><b>Effect:</b><.>Currently Makes <b>[missilep:ps]</b> coins every second.<.>Currently killing <b>[missilec:ps]</b> cockroaches every second.
+        cost:8000000000 coin
+        on tick:yield 5000000 coin
+        on tick:yield 5000000 missilep
+        on tick:yield -10000000 roach
+        on tick:yield 10000000 missilec
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/missiles.png
+ 
+    *wizard
+        name:Wizards
+        desc:Wizards to make the cockroaches go bye-bye!<//><b>Base Effect:</b><.>Produces 45 million coins and kills 90 million cockroaches per second.<//><b>Effect:</b><.>Currently Makes <b>[wizardp:ps]</b> coins every second.<.>Currently killing <b>[wizardc:ps]</b> cockroaches every second.
+        cost:90000000000 coin
+        on tick:yield 45000000 coin
+        on tick:yield 45000000 wizardp
+        on tick:yield -90000000 roach
+        on tick:yield 90000000 wizardc
+        req:prestigeUP2
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/wizard%20hat.png
+ 
+    *brute
+        name:Mutant Brutes
+        desc:Mutant Brutes to smash cockroaches like a mad man... or monster.<//><b>Base Effect:</b><.>Produces 360 million coins and kills 720 million cockroaches per second.<//><b>Effect:</b><.>Currently Makes <b>[brutep:ps]</b> coins every second.<.>Currently killing <b>[brutec:ps]</b> cockroaches every second.
+        cost:5e12 coin
+        on tick:yield 360000000 coin
+        on tick:yield 360000000 brutep
+        on tick:yield -720000000 roach
+        on tick:yield 720000000 brutec
+        req:prestigeUP8
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/mutant.png
+ 
+    *ttb
+        name:Time Travel Blasters
+        desc:Time Travel Blasters to blast the cockroaches before they even existed, now you don't have to WISH they were never born!<//><b>Base Effect:</b><.>Produces 7 billion coins and kills 14 billion cockroaches per second.<//><b>Effect:</b><.>Currently Makes <b>[ttbp:ps]</b> coins every second.<.>Currently killing <b>[ttbc:ps]</b> cockroaches every second.
+        cost:7e13 coin
+        on tick:yield 7000000000 coin
+        on tick:yield 7000000000 ttbp
+        on tick:yield -14000000000 roach
+        on tick:yield 14000000000 ttbc
+        req:prestigeUP8
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/time.png
+ 
+    *te
+        name:Terminator Exterminators
+        desc:Terminator Exterminators to basically do what the other buildings did, but much better.<//><b>Base Effect:</b><.>Produces 80 billion coins and kills 160 billion cockroaches per second.<//><b>Effect:</b><.>Currently Makes <b>[tep:ps]</b> coins every second.<.>Currently killing <b>[tec:ps]</b> cockroaches every second.
+        cost:2e15 coin
+        on tick:yield 80000000000 coin
+        on tick:yield 80000000000 tep
+        on tick:yield -160000000000 roach
+        on tick:yield 16000000000 tec
+        req:prestigeUP9
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/spray.png
+ 
+    *hod
+        name:Hands of Death
+        desc:Hands of Death to crush, squish, obliterate and to destroy these buggers to beyond oblivion.<//><b>Base Effect:</b><.>Produces 2.5 quadrillion coins and kills 5 quadrillion cockroaches per second.<//><b>Effect:</b><.>Currently Makes <b>[hodp:ps]</b> coins every second.<.>Currently killing <b>[hodc:ps]</b> cockroaches every second.
+        cost:1e20 coin
+        on tick:yield 2.5e15 coin
+        on tick:yield 2.5e15 hodp
+        on tick:yield -5e15 roach
+        on tick:yield 5e15 hodc
+        req:prestigeUP10
+        icon:icons[0,29]
+ 
+Upgrades
+    *TEMPLATE
+        on click:anim glow
+ 
+    *prestige
+        name:Prestige
+        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
+        cost:0 coin
+        req:(roach<1) and 1000000000000 roach:earned 
+        on earn:yield 100000000000000 roach 
+        on earn:yield 25 roachSoul
+        on earn:lose prestige
+        on earn:lose coin
+        on earn:lose human
+        on earn:lose stick
+        on earn:lose sledge
+        on earn:lose gun
+        on earn:lose bomb
+        on earn:lose scythe
+        on earn:lose mine
+        on earn:lose missile
+        on earn:lose wizard
+        on earn:lose brute
+        on earn:lose ttb
+        on earn:lose te
+        on earn:lose hod
+        on earn:lose tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
+ 
+   *prestige2
+        name:Prestige (2)
+        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
+        cost:0 coin
+        req:(roach<1) and 100000000000000 roach:earned 
+        on earn:yield 10000000000000000 roach 
+        on earn:yield 100 roachSoul
+        on earn:lose prestige
+        on earn:lose coin
+        on earn:lose human
+        on earn:lose stick
+        on earn:lose sledge
+        on earn:lose gun
+        on earn:lose bomb
+        on earn:lose scythe
+        on earn:lose mine
+        on earn:lose missile
+        on earn:lose wizard
+        on earn:lose brute
+        on earn:lose ttb
+        on earn:lose te
+        on earn:lose hod
+        on earn:lose tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
+ 
+    *prestige3
+        name:Prestige (3)
+        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
+        cost:0 coin
+        req:(roach<1) and 10000000000000000 roach:earned 
+        on earn:yield 1000000000000000000 roach 
+        on earn:yield 10000 roachSoul
+        on earn:lose prestige
+        on earn:lose coin
+        on earn:lose human
+        on earn:lose stick
+        on earn:lose sledge
+        on earn:lose gun
+        on earn:lose bomb
+        on earn:lose scythe
+        on earn:lose mine
+        on earn:lose missile
+        on earn:lose wizard
+        on earn:lose brute
+        on earn:lose ttb
+        on earn:lose te
+        on earn:lose hod
+        on earn:lose tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
+ 
+    *prestige4
+        name:Prestige (4)
+        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
+        cost:0 coin
+        req:(roach<1) and 1000000000000000000 roach:earned 
+        on earn:yield 100000000000000000000 roach 
+        on earn:yield 250000 roachSoul
+        on earn:lose prestige
+        on earn:lose coin
+        on earn:lose human
+        on earn:lose stick
+        on earn:lose sledge
+        on earn:lose gun
+        on earn:lose bomb
+        on earn:lose scythe
+        on earn:lose mine
+        on earn:lose missile
+        on earn:lose wizard
+        on earn:lose brute
+        on earn:lose ttb
+        on earn:lose te
+        on earn:lose hod
+        on earn:lose tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
+ 
+   *prestige5
+        name:Prestige (5)
+        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
+        cost:0 coin
+        req:(roach<1) and 100000000000000000000 roach:earned 
+        on earn:yield 10000000000000000000000 roach 
+        on earn:yield 10000000 roachSoul
+        on earn:lose prestige
+        on earn:lose coin
+        on earn:lose human
+        on earn:lose stick
+        on earn:lose sledge
+        on earn:lose gun
+        on earn:lose bomb
+        on earn:lose scythe
+        on earn:lose mine
+        on earn:lose missile
+        on earn:lose wizard
+        on earn:lose brute
+        on earn:lose ttb
+        on earn:lose te
+        on earn:lose hod
+        on earn:lose tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
+ 
+    *prestige6
+        name:Prestige (6)
+        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
+        cost:0 coin
+        req:(roach<1) and 10000000000000000000000 roach:earned 
+        on earn:yield 1000000000000000000000000 roach 
+        on earn:yield 1000000000 roachSoul
+        on earn:lose prestige
+        on earn:lose coin
+        on earn:lose human
+        on earn:lose stick
+        on earn:lose sledge
+        on earn:lose gun
+        on earn:lose bomb
+        on earn:lose scythe
+        on earn:lose mine
+        on earn:lose missile
+        on earn:lose wizard
+        on earn:lose brute
+        on earn:lose ttb
+        on earn:lose te
+        on earn:lose hod
+        on earn:lose tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
+ 
+    *prestige7
+        name:Prestige (7)
+        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
+        cost:0 coin
+        req:(roach<1) and 1000000000000000000000000 roach:earned 
+        on earn:yield 100000000000000000000000000 roach 
+        on earn:yield 25000000000 roachSoul
+        on earn:lose prestige
+        on earn:lose coin
+        on earn:lose human
+        on earn:lose stick
+        on earn:lose sledge
+        on earn:lose gun
+        on earn:lose bomb
+        on earn:lose scythe
+        on earn:lose mine
+        on earn:lose missile
+        on earn:lose wizard
+        on earn:lose brute
+        on earn:lose ttb
+        on earn:lose te
+        on earn:lose hod
+        on earn:lose tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
+ 
+    *prestige8
+        name:Prestige (8)
+        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
+        cost:0 coin
+        req:(roach<1) and 100000000000000000000000000 roach:earned 
+        on earn:yield 10000000000000000000000000000 roach 
+        on earn:yield 1000000000000 roachSoul
+        on earn:lose prestige
+        on earn:lose coin
+        on earn:lose human
+        on earn:lose stick
+        on earn:lose sledge
+        on earn:lose gun
+        on earn:lose bomb
+        on earn:lose scythe
+        on earn:lose mine
+        on earn:lose missile
+        on earn:lose wizard
+        on earn:lose brute
+        on earn:lose ttb
+        on earn:lose te
+        on earn:lose hod
+        on earn:lose tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
+ 
+    *prestige9
+        name:Prestige (9)
+        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
+        cost:0 coin
+        req:(roach<1) and 10000000000000000000000000000 roach:earned 
+        on earn:yield 1000000000000000000000000000000 roach 
+        on earn:yield 100000000000000 roachSoul
+        on earn:lose prestige
+        on earn:lose coin
+        on earn:lose human
+        on earn:lose stick
+        on earn:lose sledge
+        on earn:lose gun
+        on earn:lose bomb
+        on earn:lose scythe
+        on earn:lose mine
+        on earn:lose missile
+        on earn:lose wizard
+        on earn:lose brute
+        on earn:lose ttb
+        on earn:lose te
+        on earn:lose hod
+        on earn:lose tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
+ 
+    *prestige10
+        name:Prestige (10)
+        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
+        cost:0 coin
+        req:(roach<1) and 1000000000000000000000000000000 roach:earned 
+        on earn:yield 100000000000000000000000000000000 roach 
+        on earn:yield 2500000000000000 roachSoul
+        on earn:lose prestige
+        on earn:lose coin
+        on earn:lose human
+        on earn:lose stick
+        on earn:lose sledge
+        on earn:lose gun
+        on earn:lose bomb
+        on earn:lose scythe
+        on earn:lose mine
+        on earn:lose missile
+        on earn:lose wizard
+        on earn:lose brute
+        on earn:lose ttb
+        on earn:lose te
+        on earn:lose hod
+        on earn:lose tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
+ 
+    //prestige upgrades
+ 
+    *prestigeUP2
+        name:Magic Magic
+        desc:All it takes is a hat a wand and a wizard.<//><b>Effect:</b><.>Unlocks <b>Wizards</b>.
+        cost:1 roachSoul
+        req:25 roachSoul
+        icon:icons[29,11]
+ 
+    *prestigeUP3
+        name:Synergy Research I
+        desc:Sometimes it's better to mix things up.<//><b>Effect:</b><.>Unlocks <b>a batch of synergy upgrades.</b>
+        cost:3 roachSoul
+        req:prestigeUP2
+        icon:icons[0,10]
+ 
+    *prestigeUP4
+        name:Synergy Research II
+        desc:Killing cockroaches is better when we're together... ugh, so mushy.<//><b>Effect:</b><.>Unlocks <b>another batch of synergy upgrades.</b>
+        cost:10 roachSoul
+        req:prestigeUP3
+        icon:icons[1,10]
+ 
+     *prestigeUP5
+        name:Captivated clicking
+        desc:Clicking is just about to get better.<//><b>Effect:</b><.>Unlocks <//><b>Effect:</b><.>Unlocks <b>clicking synergy upgrades.</b>
+        cost:30 roachSoul
+        req:prestigeUP4
+        icon:icons[0,10]
+ 
+     *prestigeUP6
+        name:Powerclicks
+        desc:This may sound like a skill, but this is like a skill tree, right?<//><b>Effect</b><.>Unlocks <b>more clicking synergy upgrades.</b>
+        cost:60 roachSoul
+        req:prestigeUP5
+        icon:icons[1,10]
+ 
+     *prestigeUP8
+        name:Rise of the monster
+        desc:Come forth, monster, may the cockroaches shudder as they see the horrifying beast you are. Oh uhh, no offence hehe.<//><b>Effect:</b><.>Unlocks <b>Mutant brute</b>
+        cost:100 roachSoul
+        req:prestigeUP2
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/mutant.png
+ 
+     *prestigeUP9
+        name:Look towards the future
+        desc:I think we're gonna unlock something next.<//><b>Effect:</b><.>Unlocks <b>Time Travel Blaster</b>
+        cost:1000 roachSoul
+        req:prestigeUP8
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/time.png
+ 
+     *prestigeUP10
+        name:Hire for Massacre
+        desc:"I breathe wiping out these little buggers."<//><b>Effect:</b><.>Unlocks <b>Terminator Exterminator</b>
+        cost:100000 roachSoul
+        req:prestigeUP9
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/spray.png
+ 
+     *prestigeUP11
+        name:Cater Demise
+        desc:Death of the cockroaches lies on two palms.<//><b>Effect:</b><.>Unlocks <b>Hands of Death</b>
+        cost:1000000 roachSoul
+        req:prestigeUP10
+        icon:icons[28,7]
+ 
+     *prestigeUP12
+        name:Cockroach Research I
+        desc:<b>Effect:</b><.>Unlocks <b>Cockroach Research</b>
+        cost:1000000000 roachSoul
+        req:prestigeUP11
+        icon:icons[11,9]
+ 
+     *prestigeUP13
+        name:Cockroach Research II
+        desc:<b>Effect:</b><.>Unlocks more <b>Cockroach Research</b>
+        cost:10000000000 roachSoul
+        req:prestigeUP12
+        icon:icons[11,9]
+ 
+     *prestigeUP14
+        name:Custard cream
+        desc:To lure the cockroaches right to their trap.<//><b>Effect:</b><.>+10% coin and cockroach killing production.
+        cost:25 roachSoul
+        passive:multiply yield of coin by 1.1
+        passive:multiply yield of roach by 1.1
+        req:prestigeUP2
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/custard%20cream.png
+ 
+     *prestigeUP15
+        name:Dirt
+        desc:Oh yeah, some of these production upgrade pictures will be hand-drawn to add some more charm to the game lol.<//><b>Effect:</b><.>+10% coin and cockroach killing production.
+        cost:25 roachSoul
+        passive:multiply yield of coin by 1.1
+        passive:multiply yield of roach by 1.1
+        req:prestigeUP14
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/dirt.png
+ 
+     *prestigeUP16
+        name:Apple
+        desc:<b>Effect:</b><.>+15% coin and cockroach killing production.
+        cost:50 roachSoul
+        passive:multiply yield of coin by 1.15
+        passive:multiply yield of roach by 1.15
+        req:prestigeUP15
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/apple.png
+ 
+     *prestigeUP17
+        name:Badge
+        desc:<b>Effect:</b><.>Everything is 5% more efficient.
+        cost:10000 roachSoul
+        passive:multiply yield of click by 1.05
+        passive:multiply yield of human by 1.05
+        passive:multiply yield of stick by 1.05
+        passive:multiply yield of sledge by 1.05
+        passive:multiply yield of gun by 1.05
+        passive:multiply yield of bomb by 1.05
+        passive:multiply yield of scythe by 1.05
+        passive:multiply yield of missile by 1.05
+        passive:multiply yield of wizard by 1.05
+        passive:multiply yield of brute by 1.05
+        passive:multiply yield of ttb by 1.05
+        passive:multiply yield of te by 1.05
+        passive:multiply yield of hod by 1.05
+        req:prestigeUP16
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/Badge.png
+ 
+     *prestigeUP18
+        name:Rank Research I
+        desc:<b>Effect:</b><.>Unlocks <b>Ranks</b>
+        cost:1000000 roachSoul
+        req:prestigeUP18
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
+ 
+     *prestigeUP19
+        name:Rank Research II
+        desc:<b>Effect:</b><.>Unlocks <b>Ultra Ranks</b>
+        cost:100000000 roachSoul
+        req:prestigeUP18
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
+ 
+     *prestigeUP20
+        name:Production Pack
+        desc:<b>Effect:</b><.>Unlocks <b>production multiplier upgrades</b>
+        cost:50 roachSoul
+        req:prestigeUP15
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
+ 
+     *prestigeUP21
+        name:Production Crate
+        desc:<b>Effect:</b><.>Unlocks more <b>production multiplier upgrades</b>
+        cost:75 roachSoul
+        req:prestigeUP20
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
+ 
+     *prestigeUP22
+        name:Energy bars
+        desc:To never get bored of this.<//><b>Effect:</b><.>+25% coin and cockroach killing production.
+        passive:multiply yield of coin by 1.25
+        passive:multiply yield of roach by 1.25
+        cost:250 roachSoul
+        req:prestigeUP21
+        icon:icons[26,26]
+ 
+     *prestigeUP23
+        name:Legendary clicking
+        desc:<b>Effect:</b><.>+10% clicking production.
+        passive:multiply yield of click by 1.1
+        cost:250000 roachSoul
+        req:prestigeUP22
+        icon:icons[11,25]
+ 
+     *prestigeUP24
+        name:Cursors of calamity
+        desc:<b>Effect:</b><.>+10% clicking production.
+        passive:multiply yield of click by 1.1
+        cost:250000 roachSoul
+        req:prestigeUP23
+        icon:icons[11,28]
+ 
+     *prestigeUP25
+        name:Underworld clicking
+        desc:<b>Effect:</b><.>+10% clicking production.
+        passive:multiply yield of click by 1.1
+        cost:25000000 roachSoul
+        req:prestigeUP24
+        icon:icons[11,29]
+ 
+     *prestigeUP26
+        name:Strawberry energy bar
+        desc:<b>Effect:</b><.>+25% coin and cockroach killing production.
+        passive:multiply yield of coin by 1.25
+        passive:multiply yield of roach by 1.25
+        cost:25000000 roachSoul
+        req:prestigeUP24
+        icon:icons[25,26]
+ 
+    *prestigeUP27
+        name:Lemon energy bar
+        desc:Gross.<//><b>Effect:</b><.>+25% coin and cockroach killing production.
+        passive:multiply yield of coin by 1.25
+        passive:multiply yield of roach by 1.25
+        cost:25000000 roachSoul
+        req:prestigeUP26
+        icon:icons[24,26]
+ 
+    *prestigeUP28
+        name:Dark energy bar
+        desc:<b>Effect:</b><.>+25% coin and cockroach killing production.
+        passive:multiply yield of coin by 1.25
+        passive:multiply yield of roach by 1.25
+        cost:500 roachSoul
+        req:prestigeUP22
+        icon:icons[24,27]
+ 
+    *prestigeUP29
+        name:Production Truck
+        desc:<b>Effect:</b><.>Even more <b>production multiplier upgrades.</b>
+        cost:1000 roachSoul
+        req:prestigeUP21
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
+ 
+    *prestigeUP30
+        name:All-rounder
+        desc:<b>Effect:</b><.>Everything is 5% more efficient.
+        passive:multiply yield of click by 0.05
+        passive:multiply yield of human by 0.05
+        passive:multiply yield of stick by 0.05
+        passive:multiply yield of sledge by 0.05
+        passive:multiply yield of gun by 0.05
+        passive:multiply yield of bomb by 0.05
+        passive:multiply yield of scythe by 0.05
+        passive:multiply yield of missile by 0.05
+        passive:multiply yield of wizard by 0.05
+        passive:multiply yield of brute by 1.05
+        passive:multiply yield of ttb by 1.05
+        passive:multiply yield of te by 1.05
+        passive:multiply yield of hod by 1.05
+        cost:100000 roachSoul
+        req:prestigeUP29
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/Badge.png
+ 
+    *prestigeUP31
+        name:The Human Expert
+        desc:<b>Effect:</b><.>Humans are <b>5 times</b> as efficient.
+        cost:1000 roachSoul
+        passive:multiply yield of human by 5
+        req:prestigeUP29
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/human.png
+ 
+    *prestigeUP32
+        name:The Stick Expert
+        desc:<b>Effect:</b><.>Sticks are <b>5 times</b> as efficient.
+        cost:1000 roachSoul
+        passive:multiply yield of stick by 5
+        req:prestigeUP31
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/stick.png
+ 
+    *prestigeUP33
+        name:The Gun Expert
+        desc:<b>Effect:</b><.>Guns are <b>5 times</b> as efficient.
+        cost:75000 roachSoul
+        passive:multiply yield of gun by 5
+        req:prestigeUP32
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/gun.png
+ 
+    *prestigeUP34
+        name:The Sledge Expert
+        desc:<b>Effect:</b><.>Sledgehammers are <b>5 times</b> as efficient.
+        cost:1000 roachSoul
+        passive:multiply yield of sledge by 5
+        req:prestigeUP32
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+ 
+    *prestigeUP35
+        name:The Bomb Expert
+        desc:<b>Effect:</b><.>Bombs are <b>5 times</b> as efficient.
+        cost:100000 roachSoul
+        passive:multiply yield of bomb by 5
+        req:prestigeUP34
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
+ 
+    *prestigeUP36
+        name:The Scythe Expert
+        desc:<b>Effect:</b><.>Scythes are <b>5 times</b> as efficient.
+        cost:1000000 roachSoul
+        passive:multiply yield of scythe by 5
+        req:prestigeUP35
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+ 
+    *prestigeUP37
+        name:The Minefield Expert
+        desc:<b>Effect:</b><.>Minefields are <b>5 times</b> as efficient.
+        cost:10000000 roachSoul
+        passive:multiply yield of mine by 5
+        req:prestigeUP36
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/minefield.png
+ 
+    *prestigeUP38
+        name:The Wiz
+        desc:Hehe, see what I did there?<//><b>Effect:</b><.>Wizards are <b>5 times</b> as efficient.
+        cost:100000000 roachSoul
+        passive:multiply yield of wizard by 5
+        req:prestigeUP36
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/wizard%20hat.png
+ 
+    *prestigeUP39
+        name:The Mutant Expert
+        desc:<b>Effect:</b><.>Mutant Brute's are <b>5 times</b> as efficient.
+        cost:250000000 roachSoul
+        passive:multiply yield of brute by 5
+        req:prestigeUP38
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/mutant.png
+ 
+    *prestigeUP40
+        name:Time Travel Expert
+        desc:He to go to the future to find out if he was one.<//><b>Effect:</b><.>Time Travel Blasters are <b>5 times</b> as efficient.
+        cost:500000000 roachSoul
+        passive:multiply yield of ttb by 5
+        req:prestigeUP39
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/time.png
+ 
+    *prestigeUP41
+        name:The Missile Master
+        desc:See what I did t- ok, I'll stop.<//><b>Effect:</b><.>Missiles are <b>5 times</b> as efficient.
+        cost:500000000 roachSoul
+        passive:multiply yield of missile by 5
+        req:prestigeUP40
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/missiles.png
+ 
+    *prestigeUP42
+        name:The Exterminator Expert
+        desc:No, I didn't do that intentionally; the Exterminator part is actually from the building's name!!<//><b>Effect:</b><.>Terminator Exterminators are <b>5 times</b> as efficient.
+        cost:750000000 roachSoul
+        passive:multiply yield of te by 5
+        req:prestigeUP38
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/spray.png
+ 
+    *prestigeUP43
+        name:The Death Expert
+        desc:The scythe had too much spotlight, so we wanted to switch to this bad boy.<//><b>Effect:</b><.>Hands of Death are <b>5 times</b> as efficient.
+        cost:10000000000 roachSoul
+        passive:multiply yield of hod by 5
+        req:prestigeUP42
+        icon:icons[0,29]
+ 
+    //clicking upgrades
+ 
+    *clickingUP1
+        name:Fast clicking
+        desc:Who said we can't click fast?<//><b>Effect:</b><.>Clicking is <b>25 times</b> as efficient.
+        cost:10000 coin
+        passive:multiply yield of click by 25
+        req:10000 coin:earned
+        tag:upgrade
+        icon:icons[0,0]
+ 
+    *clickingUP2
+        name:Big clicks
+        desc:Anything that's big is better.<//><b>Effect:</b><.>Clicking is <b>25 times</b> as efficient.
+        cost:1000000 coin
+        passive:multiply yield of click by 25
+        req:100000 coin:earned
+        tag:upgrade
+        icon:icons[0,1]
+ 
+    *clickingUP3
+        name:Steel clicks
+        desc:It's got nerves of steel.<//><b>Effect:</b><.>Clicking is <b>10 times</b> as efficient.
+        cost:100000000 coin
+        passive:multiply yield of click by 10
+        req:10000000 coin:earned
+        tag:upgrade
+        icon:icons[0,2]
+ 
+    *clickingUP4
+        name:Diamond clicks
+        desc:Precious and strong, clicking will be efficient for long.<//><b>Effect:</b><.>Clicking is <b>10 times</b> as efficient.
+        cost:10000000000 coin
+        passive:multiply yield of click by 10
+        req:1000000000 coin:earned
+        tag:upgrade
+        icon:icons[0,13]
+ 
+    *clickingUP5
+        name:Emerald clicks
+        desc:I don't advise you to trade the clicks.<//><b>Effect:</b><.>Clicking is <b>10 times</b> as efficient.
+        cost:1000000000000 coin
+        passive:multiply yield of click by 10
+        req:100000000000 coin:earned
+        tag:upgrade
+        icon:icons[0,14]
+ 
+    *clickmoreUP1
+        name:Teamwork
+        desc:It's pretty obvious by now, but just a helpful reminder.<//><b>Effect:</b><.>Clicking is <b>4%</b> more efficient per human.
+        cost:100000 coin
+        passive:multiply yield of click by 0.04*(human)
+        req:50 human
+        tag:upgrade
+        icon:icons[22,7]
+ 
+    *clickmoreUP2
+        name:Social Gathering
+        desc:One of the best ways to come together.<//><b>Effect:</b><.>Clicking is <b>2%</b> more efficient per human.
+        cost:10000000 coin
+        passive:multiply yield of click by 0.02*(human)
+        req:100 human
+        tag:upgrade
+        icon:icons[22,7]
+ 
+    *clickmoreUP3
+        name:Stand Together
+        desc:Hand in hand... umm maybe hand grab hand instead.<//><b>Effect:</b><.>Clicking is <b>1%</b> more efficient per human, but humans are <b>4 times</b> as efficient.
+        cost:100000000000 coin
+        passive:multiply yield of click by 0.01*(human)
+        req:200 human
+        tag:upgrade
+        icon:icons[22,7]
+ 
+    //building upgrades
+ 
+    *humanUP1
+        name:Harder Stomping
+        desc:Let's show these cockroaches what for!<//><b>Effect:</b><.>Humans are <b>twice</b> as efficient.
+        cost:250 coin
+        passive:multiply yield of human by 2
+        req:1 human
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/shoe.png
+ 
+    *humanUP2
+        name:Spiky Cleats
+        desc:With these spiky cleats, anything is possible!<//><b>Effect:</b><.>Humans are <b>twice</b> as efficient.
+        cost:1250 coin
+        passive:multiply yield of human by 2
+        req:5 human
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/shoe.png
+ 
+    *humanUP3
+        name:Ground Pound
+        desc:Small effort, big result.<//><b>Effect:</b><.>Humans are <b>twice</b> as efficient.
+        cost:12500 coin
+        passive:multiply yield of human by 2
+        req:25 human
+        tag:upgrade
+        icon::https://pipe.miroware.io/5f1b4446e0665551b1b22fca/shoe.png
+ 
+    *humanUP4
+        name:Team Effort
+        desc:As a team, we always come out on top.<//><b>Effect:</b><.>Humans are <b>twice</b> as efficient.
+        cost:125000 coin
+        passive:multiply yield of human by 2
+        req:50 human
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/shoe.png
+ 
+    *humanUP5
+        name:Puffier dust
+        desc:To blind our enemy, destroy their excellent eyesight.<//><b>Effect:</b><.>Humans are <b>twice</b> as efficient.
+        cost:12500000 coin
+        passive:multiply yield of human by 2
+        req:100 human
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/shoe.png
+ 
+    *humanUP6
+        name:Robot Feet
+        desc:Time to put away basic things and turn to technology.<//><b>Effect:</b><.>Humans are <b>twice</b> as efficient.
+        cost:1250000000 coin
+        passive:multiply yield of human by 2
+        req:150 human
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/shoe.png
+ 
+    *humanUP7
+        name:Automated stomping
+        desc:The robot feet will not run out of energy.<//><b>Effect:</b><.>Humans are <b>twice</b> as efficient.
+        cost:125000000000 coin
+        passive:multiply yield of human by 2
+        req:200 human
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/shoe.png
+ 
+    *stickUP1
+        name:Sharper sticks
+        desc:Don't get a splinter, it's infamous.<//><b>Effect:</b><.>Sticks are <b>twice</b> as efficient.
+        cost:1750 coin
+        passive:multiply yield of stick by 2
+        req:1 stick
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/stick.png
+ 
+    *stickUP2
+        name:Bigger sticks
+        desc:The heavier, the better.<//><b>Effect:</b><.>Sticks are <b>twice</b> as efficient.
+        cost:8750 coin
+        passive:multiply yield of stick by 2
+        req:5 stick
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/stick.png
+ 
+    *stickUP3
+        name:Dual sticks
+        desc:Smash twice as much cockroaches.<//><b>Effect:</b><.>Sticks are <b>twice</b> as efficient.
+        cost:87500 coin
+        passive:multiply yield of stick by 2
+        req:25 stick
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/stick.png
+ 
+    *stickUP4
+        name:Unbreakable sticks
+        desc:Cockroaches will be running scared when it doesn't break.<//><b>Effect:</b><.>Sticks are <b>twice</b> as efficient.
+        cost:875000 coin
+        passive:multiply yield of stick by 2
+        req:50 stick
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/stick.png
+ 
+    *stickUP5
+        name:Quantum sticks
+        desc:Bring on stick energy.<//><b>Effect:</b><.>Sticks are <b>twice</b> as efficient.
+        cost:87500000 coin
+        passive:multiply yield of stick by 2
+        req:100 stick
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/stick.png
+ 
+    *stickUP6
+        name:Inferno sticks
+        desc:Hotter than the sun, will disintegrate the cockroaches in a matter of seconds.<//><b>Effect:</b><.>Sticks are <b>twice</b> as efficient.
+        cost:8750000000 coin
+        passive:multiply yield of stick by 2
+        req:150 stick
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/stick.png
+ 
+    *stickUP7
+        name:Black matter sticks
+        desc:All it takes is a blink of an eye.<//><b>Effect:</b><.>Sticks are <b>twice</b> as efficient.
+        cost:875000000000 coin
+        passive:multiply yield of stick by 2
+        req:200 stick
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/stick.png
+ 
+    *sledgeUP1
+        name:Hammer Time!
+        desc:Stop....<//><b>Effect:</b><.>Sledgehammers are <b>twice</b> as efficient.
+        cost:38000 coin
+        passive:multiply yield of sledge by 2
+        req:1 sledge
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+ 
+    *sledgeUP2
+        name:WHAMMER HAMMER
+        desc:Gives it the extra WHAM!<//><b>Effect:</b><.>Sledgehammers are <b>twice</b> as efficient.
+        cost:190000 coin
+        passive:multiply yield of sledge by 2
+        req:5 sledge
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+ 
+    *sledgeUP3
+        name:Softer Handling
+        desc:Less dropping of the hammer, you need to make sure you're the one killing the cockroaches.<//><b>Effect:</b><.>Sledgehammers are <b>twice</b> as efficient.
+        cost:1900000 coin
+        passive:multiply yield of sledge by 2
+        req:25 sledge
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+ 
+    *sledgeUP4
+        name:Enhanced Hammers
+        desc:Hammer filled enhancement.<//><b>Effect:</b><.>Sledgehammers are <b>twice</b> as efficient.
+        cost:19000000 coin
+        passive:multiply yield of sledge by 2
+        req:50 sledge
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+ 
+    *sledgeUP5
+        name:[REDACTED] Hammers
+        desc:Stop.... REDACTED time!<//><b>Effect:</b><.>Sledgehammers are <b>twice</b> as efficient.
+        cost:1900000000 coin
+        passive:multiply yield of sledge by 2
+        req:100 sledge
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+ 
+    *sledgeUP6
+        name:Anti-hammer matters
+        desc:They may not be hammers, but they matter.<//><b>Effect:</b><.>Sledgehammers are <b>twice</b> as efficient.
+        cost:190000000000 coin
+        passive:multiply yield of sledge by 2
+        req:150 sledge
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+ 
+    *sledgeUP7
+        name:Hammers of Justice
+        desc:They bring loyalty onto our cockroach killing army.<//><b>Effect:</b><.>Sledgehammers are <b>twice</b> as efficient.
+        cost:1900000000000 coin
+        passive:multiply yield of sledge by 2
+        req:200 sledge
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+ 
+    *gunUP1
+        name:Dual Gunning
+        desc:Shoot like your in a fast-paced spy action movie!!<//><b>Effect:</b><.>Guns are <b>twice</b> as efficient.
+        cost:200500 coin
+        passive:multiply yield of gun by 2
+        req:1 gun
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/gun.png
+ 
+    *gunUP2
+        name:Auto-reload
+        desc:This was high anticipated, we aren't letting these cockroaches escape!<//><b>Effect:</b><.>Guns are <b>twice</b> as efficient.
+        cost:1002500 coin
+        passive:multiply yield of gun by 2
+        req:5 gun
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/gun.png
+ 
+    *gunUP3
+        name:Titanium Bullets
+        desc:That's gotta hurt.<//><b>Effect:</b><.>Guns are <b>twice</b> as efficient.
+        cost:10025000 coin
+        passive:multiply yield of gun by 2
+        req:25 gun
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/gun.png
+ 
+    *gunUP4
+        name:Accurate Sniping
+        desc:This could help due to their minuscule stature.<//><b>Effect:</b><.>Guns are <b>twice</b> as efficient.
+        cost:100025000 coin
+        passive:multiply yield of gun by 2
+        req:50 gun
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/gun.png
+ 
+    *gunUP5
+        name:Golden Gun
+        desc:It's so bright, it's glistening bullets will blind the cockroaches!<//><b>Effect:</b><.>Guns are <b>twice</b> as efficient.
+        cost:10002500000 coin
+        passive:multiply yield of gun by 2
+        req:100 gun
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/gun.png
+ 
+    *gunUP6
+        name:Perfect Gun
+        desc:Nothing is perfect. Now think again.<//><b>Effect:</b><.>Guns are <b>twice</b> as efficient.
+        cost:1.00025e12 coin
+        passive:multiply yield of gun by 2
+        req:150 gun
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/gun.png
+ 
+    *gunUP7
+        name:Retaliator Rifle
+        desc:Cockroaches, you've been messing with the wrong people >:C<//><b>Effect:</b><.>Guns are <b>twice</b> as efficient.
+        cost:1.00025e14 coin
+        passive:multiply yield of gun by 2
+        req:200 gun
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/gun.png
+ 
+    *bombUP1
+        name:Bigger explosion range
+        desc:The bigger, the better.<//><b>Effect:</b><.>Bombs are <b>twice</b> as efficient.
+        cost:6000000 coin
+        passive:multiply yield of bomb by 2
+        req:1 bomb
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
+ 
+    *bombUP2
+        name:The Boomers
+        desc:They're lucky they get great economic prosperity, I suppose they won't mind giving their share of coins to us.<//><b>Effect:</b><.>Bombs are <b>twice</b> as efficient.
+        cost:30000000 coin
+        passive:multiply yield of bomb by 2
+        req:5 bomb
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
+ 
+    *bombUP3
+        name:Inferno blast
+        desc:We don't need fire extinguishers for this one, they deserve to burn.<//><b>Effect:</b><.>Bombs are <b>twice</b> as efficient.
+        cost:300000000 coin
+        passive:multiply yield of bomb by 2
+        req:25 bomb
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
+ 
+    *bombUP4
+        name:Electric bombs
+        desc:Zapboom!<//><b>Effect:</b><.>Bombs are <b>twice</b> as efficient.
+        cost:3000000000 coin
+        passive:multiply yield of bomb by 2
+        req:50 bomb
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
+ 
+    *bombUP5
+        name:Sun bombs
+        desc:EVEN MORE BLINDNESS!!<//><b>Effect:</b><.>Bombs are <b>twice</b> as efficient.
+        cost:300000000000 coin
+        passive:multiply yield of bomb by 2
+        req:100 bomb
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
+ 
+    *bombUP6
+        name:Magic bombs
+        desc:Now you see them, now you die.<//><b>Effect:</b><.>Bombs are <b>twice</b> as efficient.
+        cost:30000000000000 coin
+        passive:multiply yield of bomb by 2
+        req:150 bomb
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
+ 
+    *bombUP7
+        name:Bomberman
+        desc:Remember that game?<//><b>Effect:</b><.>Bombs are <b>twice</b> as efficient.
+        cost:3000000000000000 coin
+        passive:multiply yield of bomb by 2
+        req:200 bomb
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
+ 
+    *scytheUP1
+        name:Grim Reaper
+        desc:Reap what you cockroach.<//><b>Effect:</b><.>Scythes are <b>twice</b> as efficient.
+        cost:125000000 coin
+        passive:multiply yield of scythe by 2
+        req:1 scythe
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+ 
+    *scytheUP2
+        name:Bigger scythes
+        desc:Size doesn't matter, apart from cockroaches.<//><b>Effect:</b><.>Scythes are <b>twice</b> as efficient.
+        cost:625000000 coin
+        passive:multiply yield of scythe by 2
+        req:5 scythe
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+ 
+    *scytheUP3
+        name:Extra slice
+        desc:With a side of coins.<//><b>Effect:</b><.>Scythes are <b>twice</b> as efficient.
+        cost:6250000000 coin
+        passive:multiply yield of scythe by 2
+        req:25 scythe
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+ 
+    *scytheUP4
+        name:Mythical scythes
+        desc:It's no myth, they're real.<//><b>Effect:</b><.>Scythes are <b>twice</b> as efficient.
+        cost:62500000000 coin
+        passive:multiply yield of scythe by 2
+        req:50 scythe
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+ 
+    *scytheUP5
+        name:Dual scythes
+        desc:Double the spookiness, double the kill, double the coins.<//><b>Effect:</b><.>Scythes are <b>twice</b> as efficient.
+        cost:6250000000000 coin
+        passive:multiply yield of scythe by 2
+        req:100 scythe
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+ 
+    *scytheUP6
+        name:The Oldest Scythe
+        desc:It's age makes it more effective.<//><b>Effect:</b><.>Scythes are <b>twice</b> as efficient.
+        cost:625000000000000 coin
+        passive:multiply yield of scythe by 2
+        req:150 scythe
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+ 
+    *scytheUP7
+        name:Super Mega Scythe
+        desc:It's self-explanatory.<//><b>Effect:</b><.>Scythes are <b>twice</b> as efficient.
+        cost:62500000000000000 coin
+        passive:multiply yield of scythe by 2
+        req:200 scythe
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+ 
+    *mineUP1
+        name:Smaller minefields
+        desc:Now they'll truly never see it coming!<//><b>Effect:</b><.>Minefields are <b>twice</b> as efficient.
+        cost:1750000000 coin
+        passive:multiply yield of mine by 2
+        req:1 mine
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/minefield.png
+ 
+    *mineUP2
+        name:Flaming minefields
+        desc:The heat gives out the burn.<//><b>Effect:</b><.>Minefields are <b>twice</b> as efficient.
+        cost:8750000000 coin
+        passive:multiply yield of mine by 2
+        req:5 mine
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/minefield.png
+ 
+    *mineUP3
+        name:Magic minefields
+        desc:More minefields will appear instantly under the cockroaches!<//><b>Effect:</b><.>Minefields are <b>twice</b> as efficient.
+        cost:87500000000 coin
+        passive:multiply yield of mine by 2
+        req:25 mine
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/minefield.png
+ 
+    *mineUP4
+        name:Minefield Patterns
+        desc:It'll be much easier for them to die now!<//><b>Effect:</b><.>Minefields are <b>twice</b> as efficient.
+        cost:875000000000 coin
+        passive:multiply yield of mine by 2
+        req:50 mine
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/minefield.png
+ 
+    *mineUP5
+        name:Minefield
+        desc:Reminds me of something else too: Minefields.<//><b>Effect:</b><.>Minefields are <b>twice</b> as efficient.
+        cost:87500000000000 coin
+        passive:multiply yield of mine by 2
+        req:100 mine
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/minefield.png
+ 
+    *mineUP6
+        name:Magnetic minefields
+        desc:Reel the cockroaches in.... and BOOM!!<//><b>Effect:</b><.>Minefields are <b>twice</b> as efficient.
+        cost:8750000000000000 coin
+        passive:multiply yield of mine by 2
+        req:150 mine
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/minefield.png
+ 
+    *mineUP7
+        name:The One Who Explodes
+        desc:Will not return.<//><b>Effect:</b><.>Minefields are <b>twice</b> as efficient.
+        cost:875000000000000000 coin
+        passive:multiply yield of mine by 2
+        req:200 mine
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/minefield.png
+ 
+    *missileUP1
+        name:Bigger missiles
+        desc:Yes.<//><b>Effect:</b><.>Missiles are <b>twice</b> as efficient.
+        cost:80000000000 coin
+        passive:multiply yield of missile by 2
+        req:1 missile
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/missiles.png
+ 
+    *missileUP2
+        name:Auto-attack
+        desc:When has doing this manually ever been effective?<//><b>Effect:</b><.>Missiles are <b>twice</b> as efficient.
+        cost:400000000000 coin
+        passive:multiply yield of missile by 2
+        req:5 missile
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/missiles.png
+ 
+    *missileUP3
+        name:Pointy
+        desc:Giving those cockroaches the strike-through.<//><b>Effect:</b><.>Missiles are <b>twice</b> as efficient.
+        cost:4000000000000 coin
+        passive:multiply yield of missile by 2
+        req:25 missile
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/missiles.png
+ 
+    *missileUP4
+        name:Flaming Missiles
+        desc:They look like meteors now.<//><b>Effect:</b><>>Missiles are <b>twice</b> as efficient.
+        cost:40000000000000 coin
+        passive:multiply yield of missile by 2
+        req:50 missile
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/missiles.png
+ 
+    *missileUP5
+        name:Pin-point accuracy aim
+        desc:We need to give it the direct exact hit for maximum efficiency.<//><b>Effect:</b><.>Missiles are <b>twice</b> as efficient.
+        cost:4000000000000000 coin
+        passive:multiply yield of missile by 2
+        req:100 missile
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/missiles.png
+ 
+    *missileUP6
+        name:Tri-missile
+        desc:I don't know what this does, I just wanted the upgrade name to rhyme.<//><b>Effect:</b><.>Missiles are <b>twice</b> as efficient.
+        cost:400000000000000000 coin
+        passive:multiply yield of missile by 2
+        req:150 missile
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/missiles.png
+ 
+    *missileUP7
+        name:Potential missiles
+        desc:We might find out, we might miss it.<//><b>Effect:</b><.>Missiles are <b>twice</b> as efficient.
+        cost:40000000000000000000 coin
+        passive:multiply yield of missile by 2
+        req:200 missile
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/missiles.png
+ 
+    *wizardUP1
+        name:Wizard Training
+        desc:Before you learn how to do magic, you need to know magic.<//><b>Effect:</b><.>Wizards are <b>twice</b> as efficient.
+        cost:900000000000 coin
+        passive:multiply yield of wizard by 2
+        req:1 wizard
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/wizard%20hat.png
+ 
+    *wizardUP2
+        name:Apprentices
+        desc:Inexperienced and annoying, sometimes you wish they were wizard geniuses.<//><b>Effect:</b><.>Wizards are <b>twice</b> as efficient.
+        cost:4500000000000 coin
+        passive:multiply yield of wizard by 2
+        req:5 wizard
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/wizard%20hat.png
+ 
+    *wizardUP3
+        name:Catachphrases
+        desc:To be honest, the catchphrases you really need to know is hocus pocus and abracadabra, but if you wanna be a master, i suggest taking the textbook of Magic Catchphrases Revised 5th Edition.<//><b>Effect:</b><.>Wizards are <b>twice</b> as efficient.
+        cost:45000000000000 coin
+        passive:multiply yield of wizard by 2
+        req:25 wizard
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/wizard%20hat.png
+ 
+    *wizardUP4
+        name:Bigger wands
+        desc:Haha, even more cockroaches go bye-bye.<//><b>Effect:</b><.>Wizards are <b>twice</b> as efficient.
+        cost:450000000000000 coin
+        passive:multiply yield of wizard by 2
+        req:50 wizard
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/wizard%20hat.png
+ 
+    *wizardUP5
+        name:Sorcery
+        desc:Back then, people used to accuse other people of witchcraft when it wasn't true, I'm glad in these times, people don't really care anymore.<//><b>Effect:</b><.>Wizards are <b>twice</b> as efficient.
+        cost:45000000000000000 coin
+        passive:multiply yield of wizard by 2
+        req:100 wizard
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/wizard%20hat.png
+ 
+    *wizardUP6
+        name:Toxic Cauldrons
+        desc:What's better than making the cockroaches disappear? Dissolving them!<//><b>Effect:</b><.>Wizards are <b>twice</b> as efficient.
+        cost:4500000000000000000 coin
+        passive:multiply yield of wizard by 2
+        req:150 wizard
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/wizard%20hat.png
+ 
+    *wizardUP7
+        name:Cursed Spells
+        desc:Whoever says the spell can cast a deadly curse on someone! I wonder who's our victim >:)<//><b>Effect:</b><.>Wizards are <b>twice</b> as efficient.
+        cost:450000000000000000000 coin
+        passive:multiply yield of wizard by 2
+        req:200 wizard
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/wizard%20hat.png
+ 
+    *bruteUP1
+        name:Monster Mash
+        desc:The monster mash, it was a roach graveyard smash, he did the mash, it killed them in a flash, he did the mash, he did the monster mash.<//><b>Effect:</b><.>Mutant Brutes are <b>twice</b> as efficient.
+        cost:5e13 coin
+        passive:multiply yield of brute by 2
+        req:1 brute
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/mutant.png
+ 
+    *bruteUP2
+        name:Roar Training
+        desc:We'll need to make sure the brute has a frightening roar so the cockroaches get a panic attack.<//><b>Effect:</b><.>Mutant Brutes are <b>twice</b> as efficient.
+        cost:2.5e14 coin
+        passive:multiply yield of brute by 2
+        req:5 brute
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/mutant.png
+ 
+    *bruteUP3
+        name:The Fist of the Fiend
+        desc:It's fist is so powerful it causes a mighty shock wave.<//><b>Effect:</b><.>Mutant Brutes are <b>twice</b> as efficient.
+        cost:2.5e15 coin
+        passive:multiply yield of brute by 2
+        req:25 brute
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/mutant.png
+ 
+    *bruteUP4
+        name:Ultimate Ground Pound
+        desc:All together now! Cue massive quake.<//><b>Effect:</b><.>Mutant Brutes are <b>twice</b> as efficient.
+        cost:2.5e16 coin
+        passive:multiply yield of brute by 2
+        req:50 brute
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/mutant.png
+ 
+    *bruteUP5
+        name:Green Fire
+        desc:When the brutes get reeeaaally angry, they have the ability to breathe green fire, more powerful than its original element.<//><b>Effect:</b><.>Mutant Brutes are <b>twice</b> as efficient.
+        cost:2.5e18 coin
+        passive:multiply yield of brute by 2
+        req:100 brute
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/mutant.png
+ 
+    *bruteUP6
+        name:Epic Weaponry Crates
+        desc:When smashed open, get access to the sweet weapons to use against these little buggers!<//><b>Effect:</b><.>Mutant Brutes are <b>twice</b> as efficient.
+        cost:2.5e20 coin
+        passive:multiply yield of brute by 2
+        req:150 brute
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/mutant.png
+ 
+    *bruteUP7
+        name:The Biggest Brute
+        desc:Impressive.<//><b>Effect:</b><.>Mutant Brutes are <b>twice</b> as efficient.
+        cost:2.5e22 coin
+        passive:multiply yield of brute by 2
+        req:200 brute
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/mutant.png
+ 
+    *ttbUP1
+        name:Faster Blasting
+        desc:The cockroaches life flashed before their eyes.<//><b>Effect:</b><.>Time Travel Blasters are <b>twice</b> as efficient.
+        cost:7e14 coin
+        passive:multiply yield of ttb by 2
+        req:1 ttb
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/time.png
+ 
+    *ttbUP2
+        name:Space time continuum
+        desc:If we locate the event of the cockroach swarming, we might be able to lock our targets to those buggers and blast them easily!<//><b>Effect:</b><.>Time Travel Blasters are <b>twice</b> as efficient.
+        cost:3.5e15 coin
+        passive:multiply yield of ttb by 2
+        req:5 ttb
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/time.png
+ 
+    *ttbUP3
+        name:Cockroach Paradox
+        desc:Kill cockroaches by not killing them.<//><b>Effect:</b><.>Time Travel Blasters are <b>twice</b> as efficient.
+        cost:3.5e16 coin
+        passive:multiply yield of ttb by 2
+        req:25 ttb
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/time.png
+ 
+    *ttbUP4
+        name:The Complicated Guide to Make A Time Travel Trap
+        desc:You're gonna need it.<//><b>Effect:</b><.>Time Travel Blasters are <b>twice</b> as efficient.
+        cost:3.5e17 coin
+        passive:multiply yield of ttb by 2
+        req:50 ttb
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/time.png
+ 
+    *ttbUP5
+        name:Step One
+        desc:Get the objects and tools.<//><b>Effect:</b><.>Time Travel Blasters are <b>twice</b> as efficient.
+        cost:3.5e19 coin
+        passive:multiply yield of ttb by 2
+        req:100 ttb
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/time.png
+ 
+    *ttbUP6
+        name:Step Two
+        desc:Use the objects and tools to build the time machine.<//><b>Effect:</b><.>Time Travel Blasters are <b>twice</b> as efficient.
+        cost:3.5e21 coin
+        passive:multiply yield of ttb by 2
+        req:150 ttb
+        tag:upgrade
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/time.png
+ 
+    *ttbUP7
+        name:Step Three
+        desc:Use throw sweet smelling meat into the machine and sit back and watch.<//><b>Effect:</b><.>Time Travel Blasters are <b>twice</b> as efficient.
+         cost:3.5e23 coin
+         passive:multiply yield of ttb by 2
+         req:200 ttb
+         tag:upgrade
+         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/time.png
+ 
+    *teUP1
+         name:Catchy Slogan
+         desc:Spray it, stun it, kill it.<//><b>Effect:</b><.>Terminator Exterminators are <b>twice</b> as efficient.
+         cost:2e16 coin
+         passive:multiply yield of te by 2
+         req:1 te
+         tag:upgrade
+         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/spray.png
+ 
+    *teUP2
+         name:Longer stun
+         desc:Cockroaches are almost inevitable, we just need them to stop them from being annoying for a minute or two.<//><b>Effect:</b><.>Terminator Exterminators are <b>twice</b> as efficient.
+         cost:1e17 coin
+         passive:multiply yield of te by 2
+         req:5 te
+         tag:upgrade
+         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/spray.png
+ 
+    *teUP3
+         name:Infinite Refill
+         desc:Running out of the substance needed to stun the cockroaches? Never fear, infinite refill is here!<//><b>Effect:</b><.>Terminator Exterminators are <b>twice</b> as efficient.
+         cost:1e18 coin
+         passive:multiply yield of te by 2
+         req:25 te
+         tag:upgrade
+         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/spray.png
+ 
+    *teUP4
+         name:Spray v1.12
+         desc:<//><b>Effect:</b><.>Terminator Exterminators are <b>twice</b> as efficient.
+         cost:1e19 coin
+         passive:multiply yield of te by 2
+         req:50 te
+         tag:upgrade
+         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/spray.png
+ 
+    *teUP5
+         name:Spray v1.21
+         desc:<//><b>Effect:</b><.>Terminators Exterminators are <b>twice</b> as efficient.
+         cost:1e21 coin
+         passive:multiply yield of te by 2
+         req:100 te
+         tag:upgrade
+         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/spray.png
+ 
+    *teUP6
+         name:Spray v1.211
+         desc:<//><b>Effect:</b><.>Terminators Exterminators are <b>twice</b> as efficient.
+         cost:1e23 coin
+         passive:multiply yield of te by 2
+         req:150 te
+         tag:upgrade
+         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/spray.png
+ 
+    *teUP7
+         name:Spray v1.2122
+         desc:What?<//><b>Effect:</b><.>Terminators Exterminators are <b>twice</b> as efficient.
+         cost:1e25 coin
+         passive:multiply yield of te by 2
+         req:200 te
+         tag:upgrade
+         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/spray.png
+ 
+    *hodUP1
+         name:Decease
+         desc:<//><b>Effect:</b><.>Hands of Death is <b>twice</b> as efficient.
+         cost:1e21 coin
+         passive:multiply yield of hod by 2
+         req:1 hod
+         tag:upgrade
+         icon:icons[0,29]
+ 
+    *hodUP2
+         name:Snuff
+         desc:<//><b>Effect:</b><.>Hands of Death is <b>twice</b> as efficient.
+         cost:1e22 coin
+         passive:multiply yield of hod by 2
+         req:5 hod
+         tag:upgrade
+         icon:icons[0,29]
+ 
+    *hodUP3
+         name:Expire
+         desc:<//><b>Effect:</b><.>Hands of Death is <b>twice</b> as efficient.
+         cost:1e23 coin
+         passive:multiply yield of hod by 2
+         req:25 hod
+         tag:upgrade
+         icon:icons[0,29]
+ 
+    *hodUP4
+         name:Depature
+         desc:<//><b>Effect:</b><.>Hands of Death is <b>twice</b> as efficient.
+         cost:1e24 coin
+         passive:multiply yield of hod by 2
+         req:50 hod
+         tag:upgrade
+         icon:icons[0,29]
+ 
+    *hodUP5
+         name:End of the tunnel
+         desc:<//><b>Effect:</b><.>Hands of Death is <b>twice</b> as efficient.
+         cost:1e26 coin
+         passive:multiply yield of hod by 2
+         req:100 hod
+         tag:upgrade
+         icon:icons[0,29]
+ 
+    *hodUP6
+         name:Final exit
+         desc:<//><b>Effect:</b><.>Hands of Death is <b>twice</b> as efficient.
+         cost:1e28 coin
+         passive:multiply yield of hod by 2
+         req:150 hod
+         tag:upgrade
+         icon:icons[0,29]
+ 
+    *hodUP7
+         name:Eternal rest
+         desc:Sleep peacefully, cockroaches. Your power is no longer inevitable now that a lot of you are <b>dead</b>.<//><b>Effect:</b><.>Hands of Death is <b>twice</b> as efficient.
+          cost:1e30 coin
+          passive:multiply yield of hod by 2
+          req:200 hod
+          tag:upgrade
+          icon:icons[0,29]
+ 
+    //prestige synergy upgrades
+ 
+    *synergyUP1
+        name:Stick hammers
+        desc:This sounds bad, but who gives a roach?<//><b>Effect:</b><.>Sticks are <b>5%</b> more efficient per Sledgehammer.<.>Sledgehammers are <b>5%</b> more efficient per stick.
+        cost:1900000 coin
+        passive:multiply yield of stick by 0.05*(sledge)
+        passive:multiply yield of sledge by 0.05*(stick)
+        req:25 stick, 25 sledge, prestigeUP2
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+ 
+    *synergyUP2
+        name:Sharpened stick handle
+        desc:It's like the ideas for these upgrades are getting worse.<//><b>Effect:</b><.>Sticks are <b>4%</b> more efficient per Sledgehammer.<.>Sledgehammers are <b>3%</b> more efficient per stick.
+        cost:1900000000 coin
+        passive:multiply yield of stick by 0.04*(sledge)
+        passive:multiply yield of sledge by 0.03*(stick)
+        req:100 stick, 100 sledge, prestigeUP2
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+ 
+    *synergyUP3
+        name:Sledgesticks
+        desc:I don't know anymore.<//><b>Effect:</b><.>Sticks are <b>2%</b> more efficient per sledgehammer.<.>Sledgehammers are <b>2%</b> more efficient per stick.
+        cost:1900000000000 coin
+        passive:multiply yield of stick by 0.02*(sledge)
+        passive:multiply yield of sledge by 0.02*(stick)
+        req:200 stick, 200 sledge, prestigeUP2
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+ 
+    *synergyUP4
+        name:Exploding bullets
+        desc:Giving these cockroaches twice the amount of pain!<//><b>Effect:</b><.>Guns are <b>5%</b> more efficient per bomb.<.>Bombs are <b>4%</b> more efficient per gun.
+        cost:300000000 coin
+        passive:multiply yield of gun by 0.05*(bomb)
+        passive:multiply yield of bomb by 0.04*(gun)
+        req:25 gun, 25 bomb, prestigeUP2
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
+ 
+    *synergyUP5
+        name:Bullet Sprinkler
+        desc:When you throw a bomb, it explodes many bullets in a decent radius, just like a sprinkler!<//><b>Effect:</b><.>Guns are <b>2.5%</b> more efficient per bomb.<.>Bombs are <b>2%</b> more efficient per gun.
+        cost:300000000000 coin
+        passive:multiply yield of gun by 0.025*(bomb)
+        passive:multiply yield of bomb by 0.02*(gun)
+        req:100 gun, 100 bomb, prestigeUP2
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
+ 
+    *synergyUP6
+        name:Trigger Blasty
+        desc:Uhmm, try to come up with what this does.<//><b>Effect:</b><.>Guns are <b>1.25%</b> more efficient per bomb.<.>Bombs are <b>1%</b> more efficient per gun.
+        cost:3000000000000000 coin
+        passive:multiply yield of gun by 0.0125*(bomb)
+        passive:multiply yield of bomb by 0.01*(gun)
+        req:200 gun, 200 bomb, prestigeUP2
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
+ 
+    *synergyUP7
+        name:Real Grim Reaper
+        desc:Now the cockroaches are TRULY scared.<//><b>Effect:</b><.>Humans are <b>10%</b> more efficient per scythe.<.>Scythes are <b>1%</b> more efficient per human.
+        cost:6250000000 coin
+        passive:multiply yield of human by 0.1*(scythe)
+        passive:multiply yield of scythe by 0.01*(human)
+        req:25 human, 25 scythe, prestigeUP2
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+ 
+    *synergyUP8
+        name:Day of Death
+        desc:Your time has come, cockroaches. MWHAHAHAHAHAHA!!<//><b>Effect:</b><.>Humans are <b>5%</b> more efficient per scythe.<.>Scythes are <b>1%</b> more efficient per human.
+        cost:6250000000000 coin
+        passive:multiply yield of human by 0.05*(scythe)
+        passive:multiply yield of scythe by 0.01*(human)
+        req:100 human, 100 scythe, prestigeUP2
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+ 
+    *synergyUP9
+        name:Cockroach Afterlife
+        desc:They don't.<//><b>Effect:</b><.>Humans are <b>2.5%</b> more efficient per scythe.<.>Scythes are <b>0.5%</b> more efficient per human.
+        cost:62500000000000000 coin
+        passive:multiply yield of human by 0.025*(scythe)
+        passive:multiply yield of scythe by 0.05*(human)
+        req:200 human, 200 scythe, prestigeUP2
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+ 
+Achievements
+    *TEMPLATE
+        on click:anim glow
+ 
+    *1coin
+        name:Coin Holder
+        desc:Have <b>1</b> coin.
+        req:1 coin
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
+    *100coin
+        name:Coin Grabber
+        desc:Have <b>100</b> coins.
+        req:100 coin
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
+    *10Kcoin
+        name:Coin Hoarder
+        desc:Have <b>10K</b> coins.
+        req:10000 coin
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
+    *100Kcoin
+        name:Coin Saver
+        desc:Have <b>100K</b> coins.
+        req:100000 coin
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
+    *10Mcoin
+        name:Coin Milestone
+        desc:Have <b>10M</b> coins.
+        req:10000000 coin
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
+    *100Mcoin
+        name:Coin Accumulator
+        desc:Have <b>100M</b> coins.
+        req:100000000 coin
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
+    *10Bcoin
+        name:Coin Magpie
+        desc:Have <b>10B</b> coins.
+        req:10000000000 coin
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
+    *100Bcoin
+        name:Coin Scavenger
+        desc:Have <b>100B</b> coins.
+        req:100000000000 coin
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
+    *10Tcoin
+        name:Can't Find The Coin Slot
+        desc:Have <b>10T</b> coins.
+        req:1e13 coin
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
+ 
+ 
+    *1human
+        name:Single
+        desc:Have <b>1</b> human.
+        req:1 human
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/human.png
+    *50human
+        name:Human Squad!
+        desc:Have <b>50</b> humans.
+        req:50 human
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/human.png
+    *100human
+        name:Village of humans
+        desc:Have <b>100</b> humans.
+        req:100 human
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/human.png
+ 
+    *1stick
+        name:Just one stick...
+        desc:Have <b>1</b> stick
+        req:1 stick
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/stick.png
+    *50stick
+        name:It's a stick up!
+        desc:Have <b>50</b> sticks.
+        req:50 stick
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/stick.png
+    *100stick
+        name:Sticks and stones may break... COCKROACHES
+        desc:Have <b>100</b> sticks.
+        req:100 stick
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/stick.png
+ 
+    *1sledge
+        name:Ham Hammer
+        desc:Have <b>1</b> sledgehammer.
+        req:1 sledge
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+    *50sledge
+        name:Sledge of the Hedge
+        desc:Have <b>50</b> sledgehammers.
+        req:50 sledge
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+    *100sledge
+        name:The Sledge with edge
+        desc:Have <b>100</b> sledgehammers.
+        req:100 sledge
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+ 
+    *1gun
+        name:I'm on the gun
+        desc:Have <b>1</b> gun.
+        req:1 gun
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/gun.png
+    *50gun
+        name:Gun Theft Auto
+        desc:Have <b>50</b> guns.
+        req:50 gun
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/gun.png
+    *100gun
+        name:Run and Gun
+        desc:Have <b>100</b> guns.
+        req:100 gun
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/gun.png
+ 
+    *1bomb
+        name:Booming Business
+        desc:Have <b>1</b> bomb.
+        req:1 bomb
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
+    *50bomb
+        name:Super Bomberman
+        desc:Have <b>50</b> bombs.
+        req:50 bomb
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
+    *100bomb
+        name:Explosion 100%
+        desc:Have <b>100</b> bombs.
+        req:100 bomb
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
+ 
+    *1scythe
+        name:The Slaughter Begins
+        desc:Have <b>1</b> scythe.
+        req:1 scythe
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+    *50scythe
+        name:No knifes, just scythes
+        desc:Have <b>50</b> scythes.
+        req:50 scythe
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+    *100scythe
+        name:3 AM!! ROACHES BE WARNED
+        desc:Have <b>100</b> scythes.
+        req:100 scythe
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+ 
+    *1mine
+        name:Safe Steps
+        desc:Have <b>1</b> minefields.
+        req:1 mine
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/minefield.png
+    *50mine
+        name:One wrong step could cost you your whole game
+        desc:Have <b>50</b> minefields.
+        req:50 mine
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/minefield.png
+    *100mine
+        name:Roachsweeper
+        desc:Have <b>100</b> minefields.
+        req:100 mine
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/minefield.png
+ 
+    *1missile
+        name:Look, up in the sky!
+        desc:Have <b>1</b> missile.
+        req:1 missile
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/missiles.png
+    *50missile
+        name:Is it a bird?
+        desc:Have <b>50</b> missiles.
+        req:50 missile
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/missiles.png
+    *100missile
+        name:Is it a plane?
+        desc:Have <b>100</b> missiles.
+        req:100 missile
+        tag:cheevo
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/missiles.png
