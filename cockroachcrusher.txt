@@ -719,80 +719,190 @@ Upgrades
     *runeboostI
         name:x10 BOOST
         cost:0 coin
-        passive:multiply yield of coin by 10
-        passive:multiply yield of roach by 10
+        passive:multiply yield of click by 10
+        passive:multiply yield of human by 10
+        passive:multiply yield of stick by 10
+        passive:multiply yield of sledge by 10
+        passive:multiply yield of gun by 10
+        passive:multiply yield of bomb by 10
+        passive:multiply yield of scythe by 10
+        passive:multiply yield of missile by 10
+        passive:multiply yield of wizard by 10
+        passive:multiply yield of brute by 10
+        passive:multiply yield of ttb by 10
+        passive:multiply yield of te by 10
+        passive:multiply yield of hod by 10
         req:1 roachRune
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
         
     *runeboostII
         name:x10 BOOST
         cost:0 coin
-        passive:multiply yield of coin by 10
-        passive:multiply yield of roach by 10
+        passive:multiply yield of click by 10
+        passive:multiply yield of human by 10
+        passive:multiply yield of stick by 10
+        passive:multiply yield of sledge by 10
+        passive:multiply yield of gun by 10
+        passive:multiply yield of bomb by 10
+        passive:multiply yield of scythe by 10
+        passive:multiply yield of missile by 10
+        passive:multiply yield of wizard by 10
+        passive:multiply yield of brute by 10
+        passive:multiply yield of ttb by 10
+        passive:multiply yield of te by 10
+        passive:multiply yield of hod by 10
         req:2 roachRune
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
         
     *runeboostIII
         name:x10 BOOST
         cost:0 coin
-        passive:multiply yield of coin by 10
-        passive:multiply yield of roach by 10
+        passive:multiply yield of click by 10
+        passive:multiply yield of human by 10
+        passive:multiply yield of stick by 10
+        passive:multiply yield of sledge by 10
+        passive:multiply yield of gun by 10
+        passive:multiply yield of bomb by 10
+        passive:multiply yield of scythe by 10
+        passive:multiply yield of missile by 10
+        passive:multiply yield of wizard by 10
+        passive:multiply yield of brute by 10
+        passive:multiply yield of ttb by 10
+        passive:multiply yield of te by 10
+        passive:multiply yield of hod by 10
         req:3 roachRune
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
         
     *runeboostIV
         name:x10 BOOST
         cost:0 coin
-        passive:multiply yield of coin by 10
-        passive:multiply yield of roach by 10
+        passive:multiply yield of click by 10
+        passive:multiply yield of human by 10
+        passive:multiply yield of stick by 10
+        passive:multiply yield of sledge by 10
+        passive:multiply yield of gun by 10
+        passive:multiply yield of bomb by 10
+        passive:multiply yield of scythe by 10
+        passive:multiply yield of missile by 10
+        passive:multiply yield of wizard by 10
+        passive:multiply yield of brute by 10
+        passive:multiply yield of ttb by 10
+        passive:multiply yield of te by 10
+        passive:multiply yield of hod by 10
         req:4 roachRune
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
         
     *runeboostV
         name:x10 BOOST
         cost:0 coin
-        passive:multiply yield of coin by 10
-        passive:multiply yield of roach by 10
+        passive:multiply yield of click by 10
+        passive:multiply yield of human by 10
+        passive:multiply yield of stick by 10
+        passive:multiply yield of sledge by 10
+        passive:multiply yield of gun by 10
+        passive:multiply yield of bomb by 10
+        passive:multiply yield of scythe by 10
+        passive:multiply yield of missile by 10
+        passive:multiply yield of wizard by 10
+        passive:multiply yield of brute by 10
+        passive:multiply yield of ttb by 10
+        passive:multiply yield of te by 10
+        passive:multiply yield of hod by 10
         req:5 roachRune
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
         
     *runeboostVI
         name:x10 BOOST
         cost:0 coin
-        passive:multiply yield of coin by 10
-        passive:multiply yield of roach by 10
+        passive:multiply yield of click by 10
+        passive:multiply yield of human by 10
+        passive:multiply yield of stick by 10
+        passive:multiply yield of sledge by 10
+        passive:multiply yield of gun by 10
+        passive:multiply yield of bomb by 10
+        passive:multiply yield of scythe by 10
+        passive:multiply yield of missile by 10
+        passive:multiply yield of wizard by 10
+        passive:multiply yield of brute by 10
+        passive:multiply yield of ttb by 10
+        passive:multiply yield of te by 10
+        passive:multiply yield of hod by 10
         req:6 roachRune
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
         
     *runeboostVII
         name:x10 BOOST
         cost:0 coin
-        passive:multiply yield of coin by 10
-        passive:multiply yield of roach by 10
+        passive:multiply yield of click by 10
+        passive:multiply yield of human by 10
+        passive:multiply yield of stick by 10
+        passive:multiply yield of sledge by 10
+        passive:multiply yield of gun by 10
+        passive:multiply yield of bomb by 10
+        passive:multiply yield of scythe by 10
+        passive:multiply yield of missile by 10
+        passive:multiply yield of wizard by 10
+        passive:multiply yield of brute by 10
+        passive:multiply yield of ttb by 10
+        passive:multiply yield of te by 10
+        passive:multiply yield of hod by 10
         req:7 roachRune
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
         
     *runeboostVIII
         name:x10 BOOST
         cost:0 coin
-        passive:multiply yield of coin by 10
-        passive:multiply yield of roach by 10
+        passive:multiply yield of click by 10
+        passive:multiply yield of human by 10
+        passive:multiply yield of stick by 10
+        passive:multiply yield of sledge by 10
+        passive:multiply yield of gun by 10
+        passive:multiply yield of bomb by 10
+        passive:multiply yield of scythe by 10
+        passive:multiply yield of missile by 10
+        passive:multiply yield of wizard by 10
+        passive:multiply yield of brute by 10
+        passive:multiply yield of ttb by 10
+        passive:multiply yield of te by 10
+        passive:multiply yield of hod by 10
         req:8 roachRune
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
         
     *runeboostVIV
         name:x10 BOOST
         cost:0 coin
-        passive:multiply yield of coin by 10
-        passive:multiply yield of roach by 10
+        passive:multiply yield of click by 10
+        passive:multiply yield of human by 10
+        passive:multiply yield of stick by 10
+        passive:multiply yield of sledge by 10
+        passive:multiply yield of gun by 10
+        passive:multiply yield of bomb by 10
+        passive:multiply yield of scythe by 10
+        passive:multiply yield of missile by 10
+        passive:multiply yield of wizard by 10
+        passive:multiply yield of brute by 10
+        passive:multiply yield of ttb by 10
+        passive:multiply yield of te by 10
+        passive:multiply yield of hod by 10
         req:9 roachRune
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
         
     *runeboostX
         name:x10 BOOST
         cost:0 coin
-        passive:multiply yield of coin by 10
-        passive:multiply yield of roach by 10
+        passive:multiply yield of click by 10
+        passive:multiply yield of human by 10
+        passive:multiply yield of stick by 10
+        passive:multiply yield of sledge by 10
+        passive:multiply yield of gun by 10
+        passive:multiply yield of bomb by 10
+        passive:multiply yield of scythe by 10
+        passive:multiply yield of missile by 10
+        passive:multiply yield of wizard by 10
+        passive:multiply yield of brute by 10
+        passive:multiply yield of ttb by 10
+        passive:multiply yield of te by 10
+        passive:multiply yield of hod by 10
         req:10 roachRune
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
  
