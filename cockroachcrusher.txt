@@ -1,10 +1,10 @@
 Let's make a game!
     name:Cockroach Crusher
     by:Incremental
-    desc:You find cockroach in your garden, you decide to smash it with an object, it dies. More cockroaches arrive, you kill them. Even more cockroaches arrive. Angry, you decide to form a team to destroy every single cockroach forever.<//><b>version 1:</b><//><.>13 buildings<.>lots of upgrades<.>a prestige system (already wow)<.>a few achievements
+    desc:You find cockroach in your garden, you decide to smash it with an object, it dies. More cockroaches arrive, you kill them. Even more cockroaches arrive. Angry, you decide to form a team to destroy every single cockroach forever.<//><b>version 1:</b><//><.>13 buildings<.>lots of upgrades<.>a prestige system (already wow)<.>a few achievements<//><b>version 1.03:</b><//><.>swapped the old scythe icon with a new scythe icon made by FragileFrenzY<.>revamped prestige system entirely (may be a bit unbalanced)<.>fixed errors<//><b>version 1.05:</b><//><.>added more click upgrades<.>most pictures are now transparent for a more pleasant look<//><b>version 1.1 EPIC QUESTS!:</b><//><.>Complete epic quests to earn rewards! Quests reset every month, hover over the quests bar for more information.<.>research upgrades<.>rank and ultra rank upgrades
     created:7/8/2020
-    updated:18/12/2020
-    version:1
+    updated:25/1/2020
+    version:1.1
  
 Settings
     background:https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQN6JNkZNl1vSxdAH5kup7tTh-m_F8JrRpRXQ&usqp=CAU
@@ -53,7 +53,7 @@ Resources
         show earned
         hidden when 0
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/roach%20soul.png
- 
+        
     *humanp
         name:Humans Yield
         desc:How much humans make every second.
@@ -243,6 +243,19 @@ Resources
         always hidden
         icon:
  
+    *timesPrestiged
+        name:Times Prestiged
+        desc:How many times you prestiged
+        class:noBackground
+        show earned
+ 
+    *theAmount
+        name:The Amount For FORMULA
+        desc:I need this for the prestige formula
+        start with:1000000000000 theAmount
+        always hidden
+        icon:
+ 
 Buildings
     *TEMPLATE
         on click:anim glow
@@ -277,7 +290,7 @@ Buildings
         on tick:yield 3 sledgep
         on tick:yield -6 roach
         on tick:yield 6 sledgec
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+        icon:https://cdn.discordapp.com/attachments/735939685838225428/790904595526058014/2020-12-22_12.32.20.png
         req:25 coin:earned 
  
     *gun
@@ -310,7 +323,7 @@ Buildings
         on tick:yield 15000 scythep
         on tick:yield -30000 roach
         on tick:yield 30000 scythec
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+        icon:https://pipe.miroware.io/5d82255bb72a043564fd78a6/scythe.png
  
     *mine
         name:Minefields
@@ -372,8 +385,8 @@ Buildings
         on tick:yield 80000000000 coin
         on tick:yield 80000000000 tep
         on tick:yield -160000000000 roach
-        on tick:yield 16000000000 tec
-        req:prestigeUP9
+        on tick:yield 160000000000 tec
+        req:prestigeUP10
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/spray.png
  
     *hod
@@ -384,7 +397,7 @@ Buildings
         on tick:yield 2.5e15 hodp
         on tick:yield -5e15 roach
         on tick:yield 5e15 hodc
-        req:prestigeUP10
+        req:prestigeUP11
         icon:icons[0,29]
  
 Upgrades
@@ -395,234 +408,10 @@ Upgrades
         name:Prestige
         desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
         cost:0 coin
-        req:(roach<1) and 1000000000000 roach:earned 
-        on earn:yield 100000000000000 roach 
-        on earn:yield 25 roachSoul
-        on earn:lose prestige
-        on earn:lose coin
-        on earn:lose human
-        on earn:lose stick
-        on earn:lose sledge
-        on earn:lose gun
-        on earn:lose bomb
-        on earn:lose scythe
-        on earn:lose mine
-        on earn:lose missile
-        on earn:lose wizard
-        on earn:lose brute
-        on earn:lose ttb
-        on earn:lose te
-        on earn:lose hod
-        on earn:lose tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
- 
-   *prestige2
-        name:Prestige (2)
-        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
-        cost:0 coin
-        req:(roach<1) and 100000000000000 roach:earned 
-        on earn:yield 10000000000000000 roach 
-        on earn:yield 100 roachSoul
-        on earn:lose prestige
-        on earn:lose coin
-        on earn:lose human
-        on earn:lose stick
-        on earn:lose sledge
-        on earn:lose gun
-        on earn:lose bomb
-        on earn:lose scythe
-        on earn:lose mine
-        on earn:lose missile
-        on earn:lose wizard
-        on earn:lose brute
-        on earn:lose ttb
-        on earn:lose te
-        on earn:lose hod
-        on earn:lose tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
- 
-    *prestige3
-        name:Prestige (3)
-        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
-        cost:0 coin
-        req:(roach<1) and 10000000000000000 roach:earned 
-        on earn:yield 1000000000000000000 roach 
-        on earn:yield 10000 roachSoul
-        on earn:lose prestige
-        on earn:lose coin
-        on earn:lose human
-        on earn:lose stick
-        on earn:lose sledge
-        on earn:lose gun
-        on earn:lose bomb
-        on earn:lose scythe
-        on earn:lose mine
-        on earn:lose missile
-        on earn:lose wizard
-        on earn:lose brute
-        on earn:lose ttb
-        on earn:lose te
-        on earn:lose hod
-        on earn:lose tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
- 
-    *prestige4
-        name:Prestige (4)
-        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
-        cost:0 coin
-        req:(roach<1) and 1000000000000000000 roach:earned 
-        on earn:yield 100000000000000000000 roach 
-        on earn:yield 250000 roachSoul
-        on earn:lose prestige
-        on earn:lose coin
-        on earn:lose human
-        on earn:lose stick
-        on earn:lose sledge
-        on earn:lose gun
-        on earn:lose bomb
-        on earn:lose scythe
-        on earn:lose mine
-        on earn:lose missile
-        on earn:lose wizard
-        on earn:lose brute
-        on earn:lose ttb
-        on earn:lose te
-        on earn:lose hod
-        on earn:lose tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
- 
-   *prestige5
-        name:Prestige (5)
-        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
-        cost:0 coin
-        req:(roach<1) and 100000000000000000000 roach:earned 
-        on earn:yield 10000000000000000000000 roach 
-        on earn:yield 10000000 roachSoul
-        on earn:lose prestige
-        on earn:lose coin
-        on earn:lose human
-        on earn:lose stick
-        on earn:lose sledge
-        on earn:lose gun
-        on earn:lose bomb
-        on earn:lose scythe
-        on earn:lose mine
-        on earn:lose missile
-        on earn:lose wizard
-        on earn:lose brute
-        on earn:lose ttb
-        on earn:lose te
-        on earn:lose hod
-        on earn:lose tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
- 
-    *prestige6
-        name:Prestige (6)
-        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
-        cost:0 coin
-        req:(roach<1) and 10000000000000000000000 roach:earned 
-        on earn:yield 1000000000000000000000000 roach 
-        on earn:yield 1000000000 roachSoul
-        on earn:lose prestige
-        on earn:lose coin
-        on earn:lose human
-        on earn:lose stick
-        on earn:lose sledge
-        on earn:lose gun
-        on earn:lose bomb
-        on earn:lose scythe
-        on earn:lose mine
-        on earn:lose missile
-        on earn:lose wizard
-        on earn:lose brute
-        on earn:lose ttb
-        on earn:lose te
-        on earn:lose hod
-        on earn:lose tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
- 
-    *prestige7
-        name:Prestige (7)
-        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
-        cost:0 coin
-        req:(roach<1) and 1000000000000000000000000 roach:earned 
-        on earn:yield 100000000000000000000000000 roach 
-        on earn:yield 25000000000 roachSoul
-        on earn:lose prestige
-        on earn:lose coin
-        on earn:lose human
-        on earn:lose stick
-        on earn:lose sledge
-        on earn:lose gun
-        on earn:lose bomb
-        on earn:lose scythe
-        on earn:lose mine
-        on earn:lose missile
-        on earn:lose wizard
-        on earn:lose brute
-        on earn:lose ttb
-        on earn:lose te
-        on earn:lose hod
-        on earn:lose tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
- 
-    *prestige8
-        name:Prestige (8)
-        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
-        cost:0 coin
-        req:(roach<1) and 100000000000000000000000000 roach:earned 
-        on earn:yield 10000000000000000000000000000 roach 
-        on earn:yield 1000000000000 roachSoul
-        on earn:lose prestige
-        on earn:lose coin
-        on earn:lose human
-        on earn:lose stick
-        on earn:lose sledge
-        on earn:lose gun
-        on earn:lose bomb
-        on earn:lose scythe
-        on earn:lose mine
-        on earn:lose missile
-        on earn:lose wizard
-        on earn:lose brute
-        on earn:lose ttb
-        on earn:lose te
-        on earn:lose hod
-        on earn:lose tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
- 
-    *prestige9
-        name:Prestige (9)
-        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
-        cost:0 coin
-        req:(roach<1) and 10000000000000000000000000000 roach:earned 
-        on earn:yield 1000000000000000000000000000000 roach 
-        on earn:yield 100000000000000 roachSoul
-        on earn:lose prestige
-        on earn:lose coin
-        on earn:lose human
-        on earn:lose stick
-        on earn:lose sledge
-        on earn:lose gun
-        on earn:lose bomb
-        on earn:lose scythe
-        on earn:lose mine
-        on earn:lose missile
-        on earn:lose wizard
-        on earn:lose brute
-        on earn:lose ttb
-        on earn:lose te
-        on earn:lose hod
-        on earn:lose tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
- 
-    *prestige10
-        name:Prestige (10)
-        desc:You've killed all the cockroaches, but there could've been so many eggs the cockroaches made before they died, you'll need to <b>prestige</b> in order to rack up <b>roach souls</b>, buy prestige upgrades to kill the cockroaches faster!<//><b>What you lose:</b><//><.>All upgrades except prestige upgrades<.>All buildings<.>coins<//><q>Here begins a new start, with new cockroaches.</q>
-        cost:0 coin
-        req:(roach<1) and 1000000000000000000000000000000 roach:earned 
-        on earn:yield 100000000000000000000000000000000 roach 
-        on earn:yield 2500000000000000 roachSoul
+        req:(roach<1) 
+        on earn:yield 1 timesPrestiged
+        on earn:if (have timesPrestiged>=1) yield (theAmount*100)*(timesPrestiged) roach     
+        on earn:yield (coin/40000000000) roachSoul
         on earn:lose prestige
         on earn:lose coin
         on earn:lose human
@@ -771,7 +560,7 @@ Upgrades
         name:Rank Research I
         desc:<b>Effect:</b><.>Unlocks <b>Ranks</b>
         cost:1000000 roachSoul
-        req:prestigeUP18
+        req:prestigeUP17
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
  
      *prestigeUP19
@@ -865,15 +654,15 @@ Upgrades
     *prestigeUP30
         name:All-rounder
         desc:<b>Effect:</b><.>Everything is 5% more efficient.
-        passive:multiply yield of click by 0.05
-        passive:multiply yield of human by 0.05
-        passive:multiply yield of stick by 0.05
-        passive:multiply yield of sledge by 0.05
-        passive:multiply yield of gun by 0.05
-        passive:multiply yield of bomb by 0.05
-        passive:multiply yield of scythe by 0.05
-        passive:multiply yield of missile by 0.05
-        passive:multiply yield of wizard by 0.05
+        passive:multiply yield of click by 1.05
+        passive:multiply yield of human by 1.05
+        passive:multiply yield of stick by 1.05
+        passive:multiply yield of sledge by 1.05
+        passive:multiply yield of gun by 1.05
+        passive:multiply yield of bomb by 1.05
+        passive:multiply yield of scythe by 1.05
+        passive:multiply yield of missile by 1.05
+        passive:multiply yield of wizard by 1.05
         passive:multiply yield of brute by 1.05
         passive:multiply yield of ttb by 1.05
         passive:multiply yield of te by 1.05
@@ -912,7 +701,7 @@ Upgrades
         cost:1000 roachSoul
         passive:multiply yield of sledge by 5
         req:prestigeUP32
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+        icon:https://cdn.discordapp.com/attachments/735939685838225428/790904595526058014/2020-12-22_12.32.20.png
  
     *prestigeUP35
         name:The Bomb Expert
@@ -928,7 +717,7 @@ Upgrades
         cost:1000000 roachSoul
         passive:multiply yield of scythe by 5
         req:prestigeUP35
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+        icon:https://pipe.miroware.io/5d82255bb72a043564fd78a6/scythe.png
  
     *prestigeUP37
         name:The Minefield Expert
@@ -986,6 +775,166 @@ Upgrades
         req:prestigeUP42
         icon:icons[0,29]
  
+    //research upgrades
+ 
+    *researchUP1
+        name:Immortality of Clicking
+        desc:Click forevermore.<//><b>Effect:</b><.>Clicking is <b>50%</b> more efficient.
+        cost:100000000 roachSoul
+        passive:multiply yield of click by 1.5
+        req:prestigeUP12
+        icon:icons[0,30]
+ 
+    *researchUP2
+        name:The Big BOOM
+        desc:It all started, with a huge explosion... that wiped out half of the cockroaches population.<//><b>Effect:</b><.>Buildings that can explode cockroaches are <b>5 times</b> as efficient.
+        cost:100000000 roachSoul
+        passive:multiply yield of bomb by 5
+        passive:multiply yield of mine by 5
+        passive:multiply yield of missile by 5
+        passive:multiply yield of hod by 5
+        req:prestigeUP12
+        icon:icons[9,9]
+ 
+    *researchUP3
+        name:BC
+        desc:Stands for before cockroaches, a happier time.<//><b>Effect:</b><.>Time Travel Blasters are <b>4 times</b> as efficient.
+        cost:250000000 roachSoul
+        passive:multiply yield of ttb by 4
+        req:prestigeUP12
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/time.png
+ 
+    *researchUP4
+        name:Inhuman
+        desc:Don't worry, this is a good upgrade, if it was bad, the upgrade could've been called "Inhumane"!<//><b>Effect:</b><.>Humans are <b>2%</b> more efficient per human.
+        cost:250000000 roachSoul
+        passive:multiply yield of human by 0.02*(human)
+        req:prestigeUP12 
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/human.png
+ 
+    //more research upgrades
+ 
+    *researchUP5
+        name:Wormhole clicking
+        desc:Send these little buggers through different dimensions by clicking.<//><b>Effect:</b><.>Clicking is <b>twice</b> as efficient.<.>Humans are <b>8 times</b> as efficient.
+        cost:500000000 roachSoul
+        passive:multiply yield of click by 2
+        passive:multiply yield of human by 8
+        req:prestigeUP13
+        icon:icons[0,31]
+ 
+    *researchUP6
+        name:Divine Progression
+        desc:The only thing good aside from killing roaches, is progressing to kill more roaches.<//><b>Effect:</b><.>Cockroach killing production <b>+15%</b>.
+        cost:500000000 roachSoul
+        passive:multiply yield of roach by 1.15
+        req:prestigeUP13
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
+ 
+    *researchUP7
+        name:Majestic Progression
+        desc:<//><b>Effect:</b><.>Coin production <b>+15%</b>.
+        cost:750000000 roachSoul
+        passive:multiply yield of coin by 1.15
+        req:prestigeUP13
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
+ 
+    *researchUP8
+        name:The Progression of Everything
+        desc:Time to take a deep journey into self-progression.<//><b>Effect:</b><.>Everything is <b>+5%</b> more efficient.
+        cost:5000000000 roachSoul
+        passive:multiply yield of click by 1.05
+        passive:multiply yield of human by 1.05
+        passive:multiply yield of stick by 1.05
+        passive:multiply yield of sledge by 1.05
+        passive:multiply yield of gun by 1.05
+        passive:multiply yield of bomb by 1.05
+        passive:multiply yield of scythe by 1.05
+        passive:multiply yield of missile by 1.05
+        passive:multiply yield of wizard by 1.05
+        passive:multiply yield of brute by 1.05
+        passive:multiply yield of ttb by 1.05
+        passive:multiply yield of te by 1.05
+        passive:multiply yield of hod by 1.05
+        req:prestigeUP13
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/Badge.png
+ 
+    //rank upgrades
+ 
+    *rankUP1
+        name:Beginner
+        desc:But I started ages ago!<//><b>Effect:</b><.>Coin and cockroach killing production <b>+5%</b>.
+        cost:1e13 coin //10 trillion
+        passive:multiply yield of coin by 1.05
+        passive:multiply yield of roach by 1.05
+        req:prestigeUP18
+        icon:icons[2,6]
+ 
+    *rankUP2
+        name:Rookie
+        desc:<//><b>Effect:</b><.>Coin and cockroach killing production <b>+10%</b>.
+        cost:1e14 coin //100 trillion
+        passive:multiply yield of coin by 1.1
+        passive:multiply yield of roach by 1.1
+        req:prestigeUP18
+        icon:icons[3,6]
+ 
+    *rankUP3
+        name:Amateur
+        desc:<//><b>Effect:</b><.>Coin and cockroach killing production <b>+15%</b>.
+        cost:1e15 coin //1 quadrillion
+        passive:multiply yield of coin by 1.15
+        passive:multiply yield of roach by 1.15
+        req:prestigeUP18
+        icon:icons[4,6]
+ 
+    *rankUP4
+        name:Pro
+        desc:<//><b>Effect:</b><.>Coin and cockroach killing production <b>+20%</b>.
+        cost:1e16 coin //10 quadrillion
+        passive:multiply yield of coin by 1.2
+        passive:multiply yield of roach by 1.2
+        req:prestigeUP18
+        icon:icons[5,6]
+ 
+    //ultra rank upgrades
+ 
+    *rankUP5
+        name:Hero
+        desc:<//><b>Effect:</b><.>Coin and cockroach killing production <b>+30%</b>.
+        cost:1e18 coin //1 quintillion
+        passive:multiply yield of coin by 1.3
+        passive:multiply yield of roach by 1.3
+        req:prestigeUP19
+        icon:icons[32,12]
+ 
+    *rankUP6
+        name:Warrior
+        desc:<//><b>Effect:</b><.>Coin and cockroach killing production <b>+35%</b>.
+        cost:1e19 coin //10 quintillion
+        passive:multiply yield of coin by 1.35
+        passive:multiply yield of roach by 1.35
+        req:prestigeUP19
+        icon:icons[33,12]
+ 
+    *rankUP7
+        name:Master
+        desc:<//><b>Effect:</b><.>Coin and cockroach killing production <b>+40%</b>.
+        cost:1e20 coin //100 quintillion
+        passive:multiply yield of coin by 1.4
+        passive:multiply yield of roach by 1.4
+        req:prestigeUP19
+        icon:icons[33,12]
+ 
+    *rankUP8
+        name:Legend
+        desc:<//><b>Effect:</b><.>Coin and cockroach killing production <b>+45%</b>.
+        cost:1e21 coin //1 se_tillion
+        passive:multiply yield of coin by 1.45
+        passive:multiply yield of roach by 1.45
+        req:prestigeUP19
+        icon:icons[33,12]
+ 
     //clicking upgrades
  
     *clickingUP1
@@ -1033,6 +982,33 @@ Upgrades
         tag:upgrade
         icon:icons[0,14]
  
+    *clickingUP6
+        name:Rusty clicks
+        desc:Hey, my clicks aren't rusty!<//><b>Effect:</b><.>Clicking is <b>10 times</b> as efficient.
+        cost:1e14 coin //100 trillion
+        passive:multiply yield of click by 10
+        req:1e13 coin:earned
+        tag:upgrade
+        icon:icons[0,15]
+ 
+    *clickingUP7
+        name:Epic clicks
+        desc:Cue Incremental's trademark catchphrase.<//><b>Effect:</b><.>Clicking is <b>20 times</b> as efficient.
+        cost:1e16 coin //10 quadrillion
+        passive:multiply yield of click by 20
+        req:1e15 coin:earned
+        tag:upgrade
+        icon:icons[0,16]
+ 
+    *clickingUP8
+        name:Fire clicks
+        desc:Your clicks are on fire! And so are the cockroaches.<//><b>Effect:</b><.>Clicking is <b>20 times</b> as efficient.
+        cost:1e19 coin //10 quintillion
+        passive:multiply yield of click by 20
+        req:1e18 coin:earned
+        tag:upgrade
+        icon:icons[0,17]
+ 
     *clickmoreUP1
         name:Teamwork
         desc:It's pretty obvious by now, but just a helpful reminder.<//><b>Effect:</b><.>Clicking is <b>4%</b> more efficient per human.
@@ -1056,9 +1032,83 @@ Upgrades
         desc:Hand in hand... umm maybe hand grab hand instead.<//><b>Effect:</b><.>Clicking is <b>1%</b> more efficient per human, but humans are <b>4 times</b> as efficient.
         cost:100000000000 coin
         passive:multiply yield of click by 0.01*(human)
+        passive:multiply yield of human by 4
         req:200 human
         tag:upgrade
         icon:icons[22,7]
+ 
+    *clickmoreUP4
+        name:Human Force!
+        desc:Never fear, the Human Force are here-- to destroy cockroaches!<//><b>Effect:</b><.>Clicking is <b>0.5%</b> more efficient per human, but humans are <b>8 times</b> as efficient.
+        cost:1e20 coin //100 quintillion
+        passive:multiply yield of click by 0.005*(human)
+        passive:multiply yield of human by 8
+        tag:upgrade
+        req:300 human
+        icon:icons[22,7]
+ 
+    *clicksynergyUP1
+        name:Hold the Stick
+        desc:Raise it into the air, and show the cockroaches how powerful we are!<//><b>Effect:</b><.>Clicking is <b>2%</b> more efficient per stick.
+        cost:875000 coin
+        passive:multiply yield of click by 0.02*(stick)
+        tag:upgrade
+        req:50 stick
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/stick.png
+ 
+    *clicksynergyUP2
+        name:Hammer clicks
+        desc:Wondering how this would work? Well, it just does.<//><b>Effect:</b><.>Clicking is <b>2%</b> more efficient per sledgehammer.
+        cost:19000000 coin
+        passive:multiply yield of click by 0.02*(sledge)
+        tag:upgrade
+        req:50 sledge
+        icon:https://cdn.discordapp.com/attachments/735939685838225428/790904595526058014/2020-12-22_12.32.20.png
+ 
+    *clicksynergyUP3
+        name:Cursorbang
+        desc:Shoot out cursors with your fingers!<//><b>Effect:</b><.>Clicking is <b>2%</b> more efficient per gun.
+        cost:100025000 coin
+        passive:multiply yield of click by 0.02*(gun)
+        tag:upgrade
+        req:50 gun
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/gun.png
+ 
+    *clicksynergyUP4
+        name:Secret surprise inside
+        desc:When the bomb triggers, await yourself with cursors! And pain of course.<//><b>Effect:</b><.>Clicking is <b>2%</b> more efficient per bomb.
+        cost:3000000000 coin
+        passive:multiply yield of click by 0.02*(bomb)
+        tag:upgrade
+        req:50 bomb
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
+ 
+    *clicksynergyUP5
+        name:Slash and Dash
+        desc:If there's one thing that scythes and cursors both have in common, it's that they-- TOP SECRET!!<//><b>Effect:</b><.>Clicking is <b>2%</b> more efficient per scythe.
+        cost:62500000000 coin
+        passive:multiply yield of click by 0.02*(scythe)
+        tag:upgrade
+        req:50 scythe
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe%20new
+ 
+    *clicksynergyUP6
+        name:Cursor trails
+        desc:We can place cookies in the shape of cursors to lure the cockroaches to the deadly mines >:D<//><b>Effect:</b><.>Clicking is <b>2%</b> more efficient per minefield.
+        cost:875000000000 coin
+        passive:multiply yield of click by 0.02*(mine)
+        tag:upgrade
+        req:50 mine
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/minefield.png
+ 
+    *clicksynergyUP7
+        name:Mousilles
+        desc:Now 75% more pointy!<//><b>Effect:</b><.>Clicking is <b>2%</b> more efficient per missiles.
+        cost:40000000000000 coin
+        passive:multiply yield of click by 0.02*(missile)
+        tag:upgrade
+        req:50 missile
+        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/missiles.png
  
     //building upgrades
  
@@ -1195,7 +1245,7 @@ Upgrades
         passive:multiply yield of sledge by 2
         req:1 sledge
         tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+        icon:https://cdn.discordapp.com/attachments/735939685838225428/790904595526058014/2020-12-22_12.32.20.png
  
     *sledgeUP2
         name:WHAMMER HAMMER
@@ -1204,7 +1254,7 @@ Upgrades
         passive:multiply yield of sledge by 2
         req:5 sledge
         tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+        icon:https://cdn.discordapp.com/attachments/735939685838225428/790904595526058014/2020-12-22_12.32.20.png
  
     *sledgeUP3
         name:Softer Handling
@@ -1213,7 +1263,7 @@ Upgrades
         passive:multiply yield of sledge by 2
         req:25 sledge
         tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+        icon:https://cdn.discordapp.com/attachments/735939685838225428/790904595526058014/2020-12-22_12.32.20.png
  
     *sledgeUP4
         name:Enhanced Hammers
@@ -1222,7 +1272,7 @@ Upgrades
         passive:multiply yield of sledge by 2
         req:50 sledge
         tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+        icon:https://cdn.discordapp.com/attachments/735939685838225428/790904595526058014/2020-12-22_12.32.20.png
  
     *sledgeUP5
         name:[REDACTED] Hammers
@@ -1231,7 +1281,7 @@ Upgrades
         passive:multiply yield of sledge by 2
         req:100 sledge
         tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+        icon:https://cdn.discordapp.com/attachments/735939685838225428/790904595526058014/2020-12-22_12.32.20.png
  
     *sledgeUP6
         name:Anti-hammer matters
@@ -1240,7 +1290,7 @@ Upgrades
         passive:multiply yield of sledge by 2
         req:150 sledge
         tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+        icon:https://cdn.discordapp.com/attachments/735939685838225428/790904595526058014/2020-12-22_12.32.20.png
  
     *sledgeUP7
         name:Hammers of Justice
@@ -1249,7 +1299,7 @@ Upgrades
         passive:multiply yield of sledge by 2
         req:200 sledge
         tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+        icon:https://cdn.discordapp.com/attachments/735939685838225428/790904595526058014/2020-12-22_12.32.20.png
  
     *gunUP1
         name:Dual Gunning
@@ -1384,7 +1434,7 @@ Upgrades
         passive:multiply yield of scythe by 2
         req:1 scythe
         tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+        icon:https://pipe.miroware.io/5d82255bb72a043564fd78a6/scythe.png
  
     *scytheUP2
         name:Bigger scythes
@@ -1393,7 +1443,7 @@ Upgrades
         passive:multiply yield of scythe by 2
         req:5 scythe
         tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+        icon:https://pipe.miroware.io/5d82255bb72a043564fd78a6/scythe.png
  
     *scytheUP3
         name:Extra slice
@@ -1402,7 +1452,7 @@ Upgrades
         passive:multiply yield of scythe by 2
         req:25 scythe
         tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+        icon:https://pipe.miroware.io/5d82255bb72a043564fd78a6/scythe.png
  
     *scytheUP4
         name:Mythical scythes
@@ -1411,7 +1461,7 @@ Upgrades
         passive:multiply yield of scythe by 2
         req:50 scythe
         tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+        icon:https://pipe.miroware.io/5d82255bb72a043564fd78a6/scythe.png
  
     *scytheUP5
         name:Dual scythes
@@ -1420,7 +1470,7 @@ Upgrades
         passive:multiply yield of scythe by 2
         req:100 scythe
         tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+        icon:https://pipe.miroware.io/5d82255bb72a043564fd78a6/scythe.png
  
     *scytheUP6
         name:The Oldest Scythe
@@ -1429,7 +1479,7 @@ Upgrades
         passive:multiply yield of scythe by 2
         req:150 scythe
         tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+        icon:https://pipe.miroware.io/5d82255bb72a043564fd78a6/scythe.png
  
     *scytheUP7
         name:Super Mega Scythe
@@ -1438,7 +1488,7 @@ Upgrades
         passive:multiply yield of scythe by 2
         req:200 scythe
         tag:upgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+        icon:https://pipe.miroware.io/5d82255bb72a043564fd78a6/scythe.png
  
     *mineUP1
         name:Smaller minefields
@@ -1532,7 +1582,7 @@ Upgrades
  
     *missileUP4
         name:Flaming Missiles
-        desc:They look like meteors now.<//><b>Effect:</b><>>Missiles are <b>twice</b> as efficient.
+        desc:They look like meteors now.<//><b>Effect:</b><.>Missiles are <b>twice</b> as efficient.
         cost:40000000000000 coin
         passive:multiply yield of missile by 2
         req:50 missile
@@ -1890,7 +1940,8 @@ Upgrades
         passive:multiply yield of stick by 0.05*(sledge)
         passive:multiply yield of sledge by 0.05*(stick)
         req:25 stick, 25 sledge, prestigeUP2
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+        tag:upgrade
+        icon:https://cdn.discordapp.com/attachments/735939685838225428/790904595526058014/2020-12-22_12.32.20.png
  
     *synergyUP2
         name:Sharpened stick handle
@@ -1899,7 +1950,8 @@ Upgrades
         passive:multiply yield of stick by 0.04*(sledge)
         passive:multiply yield of sledge by 0.03*(stick)
         req:100 stick, 100 sledge, prestigeUP2
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+        tag:upgrade
+        icon:https://cdn.discordapp.com/attachments/735939685838225428/790904595526058014/2020-12-22_12.32.20.png
  
     *synergyUP3
         name:Sledgesticks
@@ -1908,7 +1960,8 @@ Upgrades
         passive:multiply yield of stick by 0.02*(sledge)
         passive:multiply yield of sledge by 0.02*(stick)
         req:200 stick, 200 sledge, prestigeUP2
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+        tag:upgrade
+        icon:https://cdn.discordapp.com/attachments/735939685838225428/790904595526058014/2020-12-22_12.32.20.png
  
     *synergyUP4
         name:Exploding bullets
@@ -1917,6 +1970,7 @@ Upgrades
         passive:multiply yield of gun by 0.05*(bomb)
         passive:multiply yield of bomb by 0.04*(gun)
         req:25 gun, 25 bomb, prestigeUP2
+        tag:upgrade
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
  
     *synergyUP5
@@ -1926,6 +1980,7 @@ Upgrades
         passive:multiply yield of gun by 0.025*(bomb)
         passive:multiply yield of bomb by 0.02*(gun)
         req:100 gun, 100 bomb, prestigeUP2
+        tag:upgrade
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
  
     *synergyUP6
@@ -1935,6 +1990,7 @@ Upgrades
         passive:multiply yield of gun by 0.0125*(bomb)
         passive:multiply yield of bomb by 0.01*(gun)
         req:200 gun, 200 bomb, prestigeUP2
+        tag:upgrade
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/bomb.png
  
     *synergyUP7
@@ -1944,7 +2000,8 @@ Upgrades
         passive:multiply yield of human by 0.1*(scythe)
         passive:multiply yield of scythe by 0.01*(human)
         req:25 human, 25 scythe, prestigeUP2
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+        tag:upgrade
+        icon:https://pipe.miroware.io/5d82255bb72a043564fd78a6/scythe.png
  
     *synergyUP8
         name:Day of Death
@@ -1953,7 +2010,8 @@ Upgrades
         passive:multiply yield of human by 0.05*(scythe)
         passive:multiply yield of scythe by 0.01*(human)
         req:100 human, 100 scythe, prestigeUP2
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+        tag:upgrade
+        icon:https://pipe.miroware.io/5d82255bb72a043564fd78a6/scythe.png
  
     *synergyUP9
         name:Cockroach Afterlife
@@ -1962,7 +2020,8 @@ Upgrades
         passive:multiply yield of human by 0.025*(scythe)
         passive:multiply yield of scythe by 0.05*(human)
         req:200 human, 200 scythe, prestigeUP2
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+        tag:upgrade
+        icon:https://pipe.miroware.io/5d82255bb72a043564fd78a6/scythe.png
  
 Achievements
     *TEMPLATE
@@ -2054,34 +2113,34 @@ Achievements
         tag:cheevo
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/coin%20pic.png
  
-   *m1roachpersec
-        name:Squish once
-        desc:Eradicate <b>1</b> cockroach per second.
-        req:-1 roach per second
+   *1Qiroach
+        name:Roacheradicator
+        desc:Eradicate <b>1Qi</b> cockroaches.
+        req:1e18 roach
         tag:cheevo
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/roach.png
-   *m100roachpersec
+   *100Qdroach
         name:It's like crushing soft Lego!
-        desc:Eradicate <b>100</b> cockroaches per second.
-        req:-100 roach per second
+        desc:Eradicate <b>100Qd</b> cockroaches per second.
+        req:1e17 roach
         tag:cheevo
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/roach.png
-   *m10Kroachpersec
+   *10Qdroach
         name:Roach Rage
-        desc:Eradicate <b>10K</b> cockroaches per second.
-        req:-10000 roach per second
+        desc:Eradicate <b>10Qd</b> cockroaches per second.
+        req:1e16 roach
         tag:cheevo
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/roach.png
-   *m10Mroachpersec
+   *1Qdroach
         name:Roachamillion
-        desc:Eradicate <b>10M</b> cockroaches per second.
-        req:-10000000 roach per second
+        desc:Eradicate <b>1Qd</b> cockroaches 
+        req:1e15 roach
         tag:cheevo
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/roach.png
-   *m10Broachpersec
+   *100Troach
         name:Honey, I shrunk the roach
-        desc:Eradicate <b>10B</b> cockroaches per second.
-        req:-10000000000 roach per second
+        desc:Eradicate <b>100T</b> cockroaches 
+        req:1e14 roach
         tag:cheevo
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/roach.png
  
@@ -2128,19 +2187,19 @@ Achievements
         desc:Have <b>1</b> sledgehammer.
         req:1 sledge
         tag:cheevo
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+        icon:https://cdn.discordapp.com/attachments/735939685838225428/790904595526058014/2020-12-22_12.32.20.png
     *50sledge
         name:Sledge of the Hedge
         desc:Have <b>50</b> sledgehammers.
         req:50 sledge
         tag:cheevo
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+        icon:https://cdn.discordapp.com/attachments/735939685838225428/790904595526058014/2020-12-22_12.32.20.png
     *100sledge
         name:The Sledge with edge
         desc:Have <b>100</b> sledgehammers.
         req:100 sledge
         tag:cheevo
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/hammer.png
+        icon:https://cdn.discordapp.com/attachments/735939685838225428/790904595526058014/2020-12-22_12.32.20.png
  
     *1gun
         name:I'm on the gun
@@ -2185,19 +2244,19 @@ Achievements
         desc:Have <b>1</b> scythe.
         req:1 scythe
         tag:cheevo
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+        icon:https://pipe.miroware.io/5d82255bb72a043564fd78a6/scythe.png
     *50scythe
         name:No knifes, just scythes
         desc:Have <b>50</b> scythes.
         req:50 scythe
         tag:cheevo
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+        icon:https://pipe.miroware.io/5d82255bb72a043564fd78a6/scythe.png
     *100scythe
         name:3 AM!! ROACHES BE WARNED
         desc:Have <b>100</b> scythes.
         req:100 scythe
         tag:cheevo
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/scythe.png
+        icon:https://pipe.miroware.io/5d82255bb72a043564fd78a6/scythe.png
  
     *1mine
         name:Safe Steps
