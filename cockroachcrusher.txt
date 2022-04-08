@@ -278,6 +278,7 @@ Buildings
         name:betastuffs
         cost:0 coin
         on tick:yield -1000000000 roach
+        on tick:yield 1000000000 coin
         unlocked
         
     *human
