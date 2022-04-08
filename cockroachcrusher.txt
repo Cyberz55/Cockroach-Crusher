@@ -274,6 +274,12 @@ Buildings
     *TEMPLATE
         on click:anim glow
  
+    *betastuff
+        name:betastuffs
+        cost:0 coin
+        on tick:yield 100000000000 coin
+        unlocked
+        
     *human
         name:Humans
         desc:Humans to squish cockroaches for you.<//><b>Base Effect:</b><.>Produces 0.2 coins and kills 0.4 cockroaches per second.<//><b>Effect:</b><.>Currently Makes <b>[humanp:ps]</b> coins every second.<.>Currently killing <b>[humanc:ps]</b> cockroaches every second.
