@@ -1223,18 +1223,18 @@ Upgrades
     *clickingUP7
         name:Epic clicks
         desc:Cue Incremental's trademark catchphrase.<//><b>Effect:</b><.>Clicking is <b>20 times</b> as efficient.
-        cost:1e16 coin //10 quadrillion
+        cost:1e17 coin //100 quadrillion
         passive:multiply yield of click by 20
-        req:1e15 coin:earned
+        req:1e16 coin:earned
         tag:upgrade
         icon:icons[0,16]
  
     *clickingUP8
         name:Fire clicks
         desc:Your clicks are on fire! And so are the cockroaches.<//><b>Effect:</b><.>Clicking is <b>20 times</b> as efficient.
-        cost:1e18 coin //1 quintillion
+        cost:1e19 coin //10 quintillion
         passive:multiply yield of click by 20
-        req:1e17 coin:earned
+        req:1e18 coin:earned
         tag:upgrade
         icon:icons[0,17]
  
@@ -1333,7 +1333,7 @@ Upgrades
     *clicksynergyUP7
         name:Mousilles
         desc:Now 75% more pointy!<//><b>Effect:</b><.>Clicking is <b>2%</b> more efficient per missiles.
-        cost:40000000000000 coin
+        cost:400000000000000 coin
         passive:multiply yield of click by 0.02*(missile)
         tag:upgrade
         req:50 missile
@@ -1398,7 +1398,7 @@ Upgrades
     *humanUP7
         name:Automated stomping
         desc:The robot feet will not run out of energy.<//><b>Effect:</b><.>Humans are <b>twice</b> as efficient.
-        cost:125000000000 coin
+        cost:1250000000000 coin
         passive:multiply yield of human by 2
         req:200 human
         tag:upgrade
@@ -1461,7 +1461,7 @@ Upgrades
     *stickUP7
         name:Black matter sticks
         desc:All it takes is a blink of an eye.<//><b>Effect:</b><.>Sticks are <b>twice</b> as efficient.
-        cost:875000000000 coin
+        cost:8750000000000 coin
         passive:multiply yield of stick by 2
         req:200 stick
         tag:upgrade
@@ -1524,7 +1524,7 @@ Upgrades
     *sledgeUP7
         name:Hammers of Justice
         desc:They bring loyalty onto our cockroach killing army.<//><b>Effect:</b><.>Sledgehammers are <b>twice</b> as efficient.
-        cost:1900000000000 coin
+        cost:19000000000000 coin
         passive:multiply yield of sledge by 2
         req:200 sledge
         tag:upgrade
@@ -1587,7 +1587,7 @@ Upgrades
     *gunUP7
         name:Retaliator Rifle
         desc:Cockroaches, you've been messing with the wrong people >:C<//><b>Effect:</b><.>Guns are <b>twice</b> as efficient.
-        cost:1.00025e14 coin
+        cost:1.00025e15 coin
         passive:multiply yield of gun by 2
         req:200 gun
         tag:upgrade
@@ -1650,7 +1650,7 @@ Upgrades
     *bombUP7
         name:Bomberman
         desc:Remember that game?<//><b>Effect:</b><.>Bombs are <b>twice</b> as efficient.
-        cost:3000000000000000 coin
+        cost:30000000000000000 coin
         passive:multiply yield of bomb by 2
         req:200 bomb
         tag:upgrade
@@ -1713,7 +1713,7 @@ Upgrades
     *scytheUP7
         name:Super Mega Scythe
         desc:It's self-explanatory.<//><b>Effect:</b><.>Scythes are <b>twice</b> as efficient.
-        cost:62500000000000000 coin
+        cost:625000000000000000 coin
         passive:multiply yield of scythe by 2
         req:200 scythe
         tag:upgrade
@@ -1776,7 +1776,7 @@ Upgrades
     *mineUP7
         name:The One Who Explodes
         desc:Will not return.<//><b>Effect:</b><.>Minefields are <b>twice</b> as efficient.
-        cost:875000000000000000 coin
+        cost:8750000000000000000 coin
         passive:multiply yield of mine by 2
         req:200 mine
         tag:upgrade
@@ -1839,7 +1839,7 @@ Upgrades
     *missileUP7
         name:Potential missiles
         desc:We might find out, we might miss it.<//><b>Effect:</b><.>Missiles are <b>twice</b> as efficient.
-        cost:40000000000000000000 coin
+        cost:400000000000000000000 coin
         passive:multiply yield of missile by 2
         req:200 missile
         tag:upgrade
@@ -1902,7 +1902,7 @@ Upgrades
     *wizardUP7
         name:Cursed Spells
         desc:Whoever says the spell can cast a deadly curse on someone! I wonder who's our victim >:)<//><b>Effect:</b><.>Wizards are <b>twice</b> as efficient.
-        cost:450000000000000000000 coin
+        cost:4500000000000000000000 coin
         passive:multiply yield of wizard by 2
         req:200 wizard
         tag:upgrade
@@ -1965,7 +1965,7 @@ Upgrades
     *bruteUP7
         name:The Biggest Brute
         desc:Impressive.<//><b>Effect:</b><.>Mutant Brutes are <b>twice</b> as efficient.
-        cost:2.5e22 coin
+        cost:2.5e23 coin
         passive:multiply yield of brute by 2
         req:200 brute
         tag:upgrade
@@ -2028,7 +2028,7 @@ Upgrades
     *ttbUP7
         name:Step Three
         desc:Use throw sweet smelling meat into the machine and sit back and watch.<//><b>Effect:</b><.>Time Travel Blasters are <b>twice</b> as efficient.
-         cost:3.5e23 coin
+         cost:3.5e24 coin
          passive:multiply yield of ttb by 2
          req:200 ttb
          tag:upgrade
@@ -2091,7 +2091,7 @@ Upgrades
     *teUP7
          name:Spray v1.2122
          desc:What?<//><b>Effect:</b><.>Terminators Exterminators are <b>twice</b> as efficient.
-         cost:1e25 coin
+         cost:1e26 coin
          passive:multiply yield of te by 2
          req:200 te
          tag:upgrade
@@ -2154,7 +2154,7 @@ Upgrades
     *hodUP7
          name:Eternal rest
          desc:Sleep peacefully, cockroaches. Your power is no longer inevitable now that a lot of you are <b>dead</b>.<//><b>Effect:</b><.>Hands of Death is <b>twice</b> as efficient.
-          cost:1e30 coin
+          cost:1e31 coin
           passive:multiply yield of hod by 2
           req:200 hod
           tag:upgrade
@@ -2185,7 +2185,7 @@ Upgrades
     *synergyUP3
         name:Sledgesticks
         desc:I don't know anymore.<//><b>Effect:</b><.>Sticks are <b>2%</b> more efficient per sledgehammer.<.>Sledgehammers are <b>2%</b> more efficient per stick.
-        cost:1900000000000 coin
+        cost:19000000000000 coin
         passive:multiply yield of stick by 0.02*(sledge)
         passive:multiply yield of sledge by 0.02*(stick)
         req:200 stick, 200 sledge, prestigeUP2
@@ -2215,7 +2215,7 @@ Upgrades
     *synergyUP6
         name:Trigger Blasty
         desc:Uhmm, try to come up with what this does.<//><b>Effect:</b><.>Guns are <b>1.25%</b> more efficient per bomb.<.>Bombs are <b>1%</b> more efficient per gun.
-        cost:3000000000000000 coin
+        cost:30000000000000000 coin
         passive:multiply yield of gun by 0.0125*(bomb)
         passive:multiply yield of bomb by 0.01*(gun)
         req:200 gun, 200 bomb, prestigeUP2
@@ -2245,7 +2245,7 @@ Upgrades
     *synergyUP9
         name:Cockroach Afterlife
         desc:They don't.<//><b>Effect:</b><.>Humans are <b>2.5%</b> more efficient per scythe.<.>Scythes are <b>0.5%</b> more efficient per human.
-        cost:62500000000000000 coin
+        cost:625000000000000000 coin
         passive:multiply yield of human by 0.025*(scythe)
         passive:multiply yield of scythe by 0.05*(human)
         req:200 human, 200 scythe, prestigeUP2
