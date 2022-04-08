@@ -471,7 +471,6 @@ Upgrades
         on earn:lose te
         on earn:lose hod
         on earn:lose tag:upgrade
-        end
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
         
     *sacrificeI
