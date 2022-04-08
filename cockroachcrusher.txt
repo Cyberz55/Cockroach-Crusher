@@ -275,10 +275,15 @@ Buildings
         on click:anim glow
  
     *betastuff
-        name:betastuffs
+        name:roachstuffs
+        cost:0 coin
+        on tick:yield -1000000000 roach
+        unlocked
+        
+    *coinsbeta
+        name:coinstuffs
         cost:0 coin
         on tick:yield 1000000000 coin
-        on tick:yield -1000000000 roach
         unlocked
         
     *human
