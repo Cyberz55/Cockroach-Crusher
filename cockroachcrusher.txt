@@ -444,7 +444,7 @@ Buildings
         passive:multiply yield of te by 1.0001
         passive:multiply yield of hod by 1.0001
         req:4000000 roachSoul:earned
-        cost increase:145%
+        cost increase:230%
         limit:2000
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
         
