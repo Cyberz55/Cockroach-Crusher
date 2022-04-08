@@ -453,8 +453,6 @@ Upgrades
         req:(roach<1) 
         on earn:yield 1 timesPrestiged
         on earn:if (have timesPrestiged>=1) yield (theAmount*100)*(timesPrestiged) roach
-        on earn:if (have timesPrestiged>=10) yield (theAmount*1000)*(timesPrestiged) roach
-        end
         on earn:yield (coin/40000000000) roachSoul
         on earn:lose prestige
         on earn:lose coin
