@@ -430,19 +430,19 @@ Buildings
         name:Rune Upgrader
         desc:With the intricate spectacularity of roach souls, you can now upgrade the power of your runes.
         cost:4000000 roachSoul
-        passive:multiply yield of click by 1.01
-        passive:multiply yield of human by 1.01
-        passive:multiply yield of stick by 1.01
-        passive:multiply yield of sledge by 1.01
-        passive:multiply yield of gun by 1.01
-        passive:multiply yield of bomb by 1.01
-        passive:multiply yield of scythe by 1.01
-        passive:multiply yield of missile by 1.01
-        passive:multiply yield of wizard by 1.01
-        passive:multiply yield of brute by 1.01
-        passive:multiply yield of ttb by 1.01
-        passive:multiply yield of te by 1.01
-        passive:multiply yield of hod by 1.01
+        passive:multiply yield of click by 1.0001
+        passive:multiply yield of human by 1.0001
+        passive:multiply yield of stick by 1.0001
+        passive:multiply yield of sledge by 1.0001
+        passive:multiply yield of gun by 1.0001
+        passive:multiply yield of bomb by 1.0001
+        passive:multiply yield of scythe by 1.0001
+        passive:multiply yield of missile by 1.0001
+        passive:multiply yield of wizard by 1.0001
+        passive:multiply yield of brute by 1.0001
+        passive:multiply yield of ttb by 1.0001
+        passive:multiply yield of te by 1.0001
+        passive:multiply yield of hod by 1.0001
         req:4000000 roachSoul:earned
         cost increase:145%
         limit:2000
