@@ -559,87 +559,6 @@ Upgrades
         on earn:lose tag:prestigeUpgrade
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
         
-    *sacrificeIV
-        name:Sacrifice for 4th Roach Rune
-        desc:It's getting much harder to kill the cockroaches, even prestiging can only do so much! Luckily, you can <b>sacrifice</b> everything in return for <b>roach runes</b>, which can multiply cockroach and coin production by x10 for each one you own!<//><b>What you lose:</b><//><.>All upgrades including prestige upgrades<.>All buildings<.>coins<.>roach souls<//><q>Some things are worth giving up for.</q>
-        cost:0 coin
-        req:5000 roachSoul, 3 timesSacrificed
-        on earn:yield 1 roachRune
-        on earn:yield 1 timesSacrificed
-        on earn:lose prestige
-        on earn:lose coin
-        on earn:lose roachSoul
-        on earn:lose human
-        on earn:lose stick
-        on earn:lose sledge
-        on earn:lose gun
-        on earn:lose bomb
-        on earn:lose scythe
-        on earn:lose mine
-        on earn:lose missile
-        on earn:lose wizard
-        on earn:lose brute
-        on earn:lose ttb
-        on earn:lose te
-        on earn:lose hod
-        on earn:lose tag:upgrade
-        on earn:lose tag:prestigeUpgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
-        
-    *sacrificeV
-        name:Sacrifice for 5th Roach Rune
-        desc:It's getting much harder to kill the cockroaches, even prestiging can only do so much! Luckily, you can <b>sacrifice</b> everything in return for <b>roach runes</b>, which can multiply cockroach and coin production by x10 for each one you own!<//><b>What you lose:</b><//><.>All upgrades including prestige upgrades<.>All buildings<.>coins<.>roach souls<//><q>Some things are worth giving up for.</q>
-        cost:0 coin
-        req:25000 roachSoul, 4 timesSacrificed
-        on earn:yield 1 roachRune
-        on earn:yield 1 timesSacrificed
-        on earn:lose prestige
-        on earn:lose coin
-        on earn:lose roachSoul
-        on earn:lose human
-        on earn:lose stick
-        on earn:lose sledge
-        on earn:lose gun
-        on earn:lose bomb
-        on earn:lose scythe
-        on earn:lose mine
-        on earn:lose missile
-        on earn:lose wizard
-        on earn:lose brute
-        on earn:lose ttb
-        on earn:lose te
-        on earn:lose hod
-        on earn:lose tag:upgrade
-        on earn:lose tag:prestigeUpgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
-        
-    *sacrificeVI
-        name:Sacrifice for 6th Roach Rune
-        desc:It's getting much harder to kill the cockroaches, even prestiging can only do so much! Luckily, you can <b>sacrifice</b> everything in return for <b>roach runes</b>, which can multiply cockroach and coin production by x10 for each one you own!<//><b>What you lose:</b><//><.>All upgrades including prestige upgrades<.>All buildings<.>coins<.>roach souls<//><q>Some things are worth giving up for.</q>
-        cost:0 coin
-        req:75000 roachSoul, 5 timesSacrificed
-        on earn:yield 1 roachRune
-        on earn:yield 1 timesSacrificed
-        on earn:lose prestige
-        on earn:lose coin
-        on earn:lose roachSoul
-        on earn:lose human
-        on earn:lose stick
-        on earn:lose sledge
-        on earn:lose gun
-        on earn:lose bomb
-        on earn:lose scythe
-        on earn:lose mine
-        on earn:lose missile
-        on earn:lose wizard
-        on earn:lose brute
-        on earn:lose ttb
-        on earn:lose te
-        on earn:lose hod
-        on earn:lose tag:upgrade
-        on earn:lose tag:prestigeUpgrade
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/trophy.png
-        
     //rune upgrades
     
     *runeboostI
@@ -699,63 +618,6 @@ Upgrades
         req:3 roachRune
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
         
-    *runeboostIV
-        name:x10 BOOST
-        cost:0 coin
-        passive:multiply yield of click by 10
-        passive:multiply yield of human by 10
-        passive:multiply yield of stick by 10
-        passive:multiply yield of sledge by 10
-        passive:multiply yield of gun by 10
-        passive:multiply yield of bomb by 10
-        passive:multiply yield of scythe by 10
-        passive:multiply yield of missile by 10
-        passive:multiply yield of wizard by 10
-        passive:multiply yield of brute by 10
-        passive:multiply yield of ttb by 10
-        passive:multiply yield of te by 10
-        passive:multiply yield of hod by 10
-        req:4 roachRune
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
-        
-    *runeboostV
-        name:x10 BOOST
-        cost:0 coin
-        passive:multiply yield of click by 10
-        passive:multiply yield of human by 10
-        passive:multiply yield of stick by 10
-        passive:multiply yield of sledge by 10
-        passive:multiply yield of gun by 10
-        passive:multiply yield of bomb by 10
-        passive:multiply yield of scythe by 10
-        passive:multiply yield of missile by 10
-        passive:multiply yield of wizard by 10
-        passive:multiply yield of brute by 10
-        passive:multiply yield of ttb by 10
-        passive:multiply yield of te by 10
-        passive:multiply yield of hod by 10
-        req:5 roachRune
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
-        
-    *runeboostVI
-        name:x10 BOOST
-        cost:0 coin
-        passive:multiply yield of click by 10
-        passive:multiply yield of human by 10
-        passive:multiply yield of stick by 10
-        passive:multiply yield of sledge by 10
-        passive:multiply yield of gun by 10
-        passive:multiply yield of bomb by 10
-        passive:multiply yield of scythe by 10
-        passive:multiply yield of missile by 10
-        passive:multiply yield of wizard by 10
-        passive:multiply yield of brute by 10
-        passive:multiply yield of ttb by 10
-        passive:multiply yield of te by 10
-        passive:multiply yield of hod by 10
-        req:6 roachRune
-        icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
- 
     //prestige upgrades
  
     *prestigeUP2
@@ -1361,18 +1223,18 @@ Upgrades
     *clickingUP7
         name:Epic clicks
         desc:Cue Incremental's trademark catchphrase.<//><b>Effect:</b><.>Clicking is <b>20 times</b> as efficient.
-        cost:1e17 coin //100 quadrillion
+        cost:1e16 coin //10 quadrillion
         passive:multiply yield of click by 20
-        req:1e16 coin:earned
+        req:1e15 coin:earned
         tag:upgrade
         icon:icons[0,16]
  
     *clickingUP8
         name:Fire clicks
         desc:Your clicks are on fire! And so are the cockroaches.<//><b>Effect:</b><.>Clicking is <b>20 times</b> as efficient.
-        cost:1e19 coin //10 quintillion
+        cost:1e18 coin //1 quintillion
         passive:multiply yield of click by 20
-        req:1e18 coin:earned
+        req:1e17 coin:earned
         tag:upgrade
         icon:icons[0,17]
  
