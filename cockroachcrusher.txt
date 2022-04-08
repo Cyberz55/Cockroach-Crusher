@@ -453,6 +453,7 @@ Upgrades
             yield (theAmount*1000)*(timesPrestiged) roach
           end
         end
+        
         on earn:yield (coin/40000000000) roachSoul
         on earn:lose prestige
         on earn:lose coin
