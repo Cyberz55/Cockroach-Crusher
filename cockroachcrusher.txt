@@ -443,7 +443,7 @@ Buildings
         passive:multiply yield of ttb by 1.0001
         passive:multiply yield of te by 1.0001
         passive:multiply yield of hod by 1.0001
-        req:4000000 roachSoul:earned
+        req:4000000 roachSoul:earned, 3 roachRune
         cost increase:460%
         limit:2000
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
@@ -482,7 +482,7 @@ Upgrades
         name:Sacrifice for 1st Roach Rune
         desc:It's getting much harder to kill the cockroaches, even prestiging can only do so much! Luckily, you can <b>sacrifice</b> everything in return for <b>roach runes</b>, which can multiply cockroach and coin production by <b>x2.5</b> for each one you own!<//><b>What you lose:</b><//><.>All upgrades including prestige upgrades<.>All buildings<.>coins<.>roach souls<//><q>Some things are worth giving up for.</q>
         cost:0 coin
-        req:1000 roachSoul
+        req:10000 roachSoul
         on earn:yield 1 roachRune
         on earn:yield 1 timesSacrificed
         on earn:lose prestige
@@ -509,7 +509,7 @@ Upgrades
         name:Sacrifice for 2nd Roach Rune
         desc:It's getting much harder to kill the cockroaches, even prestiging can only do so much! Luckily, you can <b>sacrifice</b> everything in return for <b>roach runes</b>, which can multiply cockroach and coin production by <b>x5</b> for each one you own!<//><b>What you lose:</b><//><.>All upgrades including prestige upgrades<.>All buildings<.>coins<.>roach souls<//><q>Some things are worth giving up for.</q>
         cost:0 coin
-        req:20000 roachSoul, 1 timesSacrificed
+        req:200000 roachSoul, 1 timesSacrificed
         on earn:yield 1 roachRune
         on earn:yield 1 timesSacrificed
         on earn:lose prestige
@@ -536,7 +536,7 @@ Upgrades
         name:Sacrifice for 3rd Roach Rune
         desc:It's getting much harder to kill the cockroaches, even prestiging can only do so much! Luckily, you can <b>sacrifice</b> everything in return for <b>roach runes</b>, which can multiply cockroach and coin production by <b>x10</b> for each one you own!<//><b>What you lose:</b><//><.>All upgrades including prestige upgrades<.>All buildings<.>coins<.>roach souls<//><q>Some things are worth giving up for.</q>
         cost:0 coin
-        req:400000 roachSoul, 2 timesSacrificed
+        req:4000000 roachSoul, 2 timesSacrificed
         on earn:yield 1 roachRune
         on earn:yield 1 timesSacrificed
         on earn:lose prestige
