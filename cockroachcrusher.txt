@@ -444,7 +444,7 @@ Buildings
         passive:multiply yield of te by 1.0001
         passive:multiply yield of hod by 1.0001
         req:4000000 roachSoul:earned
-        cost increase:230%
+        cost increase:460%
         limit:2000
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
         
@@ -480,7 +480,7 @@ Upgrades
         
     *sacrificeI
         name:Sacrifice for 1st Roach Rune
-        desc:It's getting much harder to kill the cockroaches, even prestiging can only do so much! Luckily, you can <b>sacrifice</b> everything in return for <b>roach runes</b>, which can multiply cockroach and coin production by x10 for each one you own!<//><b>What you lose:</b><//><.>All upgrades including prestige upgrades<.>All buildings<.>coins<.>roach souls<//><q>Some things are worth giving up for.</q>
+        desc:It's getting much harder to kill the cockroaches, even prestiging can only do so much! Luckily, you can <b>sacrifice</b> everything in return for <b>roach runes</b>, which can multiply cockroach and coin production by <b>x2.5</b> for each one you own!<//><b>What you lose:</b><//><.>All upgrades including prestige upgrades<.>All buildings<.>coins<.>roach souls<//><q>Some things are worth giving up for.</q>
         cost:0 coin
         req:1000 roachSoul
         on earn:yield 1 roachRune
@@ -507,7 +507,7 @@ Upgrades
         
     *sacrificeII
         name:Sacrifice for 2nd Roach Rune
-        desc:It's getting much harder to kill the cockroaches, even prestiging can only do so much! Luckily, you can <b>sacrifice</b> everything in return for <b>roach runes</b>, which can multiply cockroach and coin production by x10 for each one you own!<//><b>What you lose:</b><//><.>All upgrades including prestige upgrades<.>All buildings<.>coins<.>roach souls<//><q>Some things are worth giving up for.</q>
+        desc:It's getting much harder to kill the cockroaches, even prestiging can only do so much! Luckily, you can <b>sacrifice</b> everything in return for <b>roach runes</b>, which can multiply cockroach and coin production by <b>x5</b> for each one you own!<//><b>What you lose:</b><//><.>All upgrades including prestige upgrades<.>All buildings<.>coins<.>roach souls<//><q>Some things are worth giving up for.</q>
         cost:0 coin
         req:2000 roachSoul, 1 timesSacrificed
         on earn:yield 1 roachRune
@@ -534,7 +534,7 @@ Upgrades
         
     *sacrificeIII
         name:Sacrifice for 3rd Roach Rune
-        desc:It's getting much harder to kill the cockroaches, even prestiging can only do so much! Luckily, you can <b>sacrifice</b> everything in return for <b>roach runes</b>, which can multiply cockroach and coin production by x10 for each one you own!<//><b>What you lose:</b><//><.>All upgrades including prestige upgrades<.>All buildings<.>coins<.>roach souls<//><q>Some things are worth giving up for.</q>
+        desc:It's getting much harder to kill the cockroaches, even prestiging can only do so much! Luckily, you can <b>sacrifice</b> everything in return for <b>roach runes</b>, which can multiply cockroach and coin production by <b>x10</b> for each one you own!<//><b>What you lose:</b><//><.>All upgrades including prestige upgrades<.>All buildings<.>coins<.>roach souls<//><q>Some things are worth giving up for.</q>
         cost:0 coin
         req:3000 roachSoul, 2 timesSacrificed
         on earn:yield 1 roachRune
@@ -562,40 +562,40 @@ Upgrades
     //rune upgrades
     
     *runeboostI
-        name:x10 BOOST
+        name:x2.5 BOOST
         cost:0 coin
-        passive:multiply yield of click by 10
-        passive:multiply yield of human by 10
-        passive:multiply yield of stick by 10
-        passive:multiply yield of sledge by 10
-        passive:multiply yield of gun by 10
-        passive:multiply yield of bomb by 10
-        passive:multiply yield of scythe by 10
-        passive:multiply yield of missile by 10
-        passive:multiply yield of wizard by 10
-        passive:multiply yield of brute by 10
-        passive:multiply yield of ttb by 10
-        passive:multiply yield of te by 10
-        passive:multiply yield of hod by 10
+        passive:multiply yield of click by 2.5
+        passive:multiply yield of human by 2.5
+        passive:multiply yield of stick by 2.5
+        passive:multiply yield of sledge by 2.5
+        passive:multiply yield of gun by 2.5
+        passive:multiply yield of bomb by 2.5
+        passive:multiply yield of scythe by 2.5
+        passive:multiply yield of missile by 2.5
+        passive:multiply yield of wizard by 2.5
+        passive:multiply yield of brute by 2.5
+        passive:multiply yield of ttb by 2.5
+        passive:multiply yield of te by 2.5
+        passive:multiply yield of hod by 2.5
         req:1 roachRune
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
         
     *runeboostII
-        name:x10 BOOST
+        name:x5 BOOST
         cost:0 coin
-        passive:multiply yield of click by 10
-        passive:multiply yield of human by 10
-        passive:multiply yield of stick by 10
-        passive:multiply yield of sledge by 10
-        passive:multiply yield of gun by 10
-        passive:multiply yield of bomb by 10
-        passive:multiply yield of scythe by 10
-        passive:multiply yield of missile by 10
-        passive:multiply yield of wizard by 10
-        passive:multiply yield of brute by 10
-        passive:multiply yield of ttb by 10
-        passive:multiply yield of te by 10
-        passive:multiply yield of hod by 10
+        passive:multiply yield of click by 5
+        passive:multiply yield of human by 5
+        passive:multiply yield of stick by 5
+        passive:multiply yield of sledge by 5
+        passive:multiply yield of gun by 5
+        passive:multiply yield of bomb by 5
+        passive:multiply yield of scythe by 5
+        passive:multiply yield of missile by 5
+        passive:multiply yield of wizard by 5
+        passive:multiply yield of brute by 5
+        passive:multiply yield of ttb by 5
+        passive:multiply yield of te by 5
+        passive:multiply yield of hod by 5
         req:2 roachRune
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/production%20multi.png
         
