@@ -1177,9 +1177,9 @@ Upgrades
  
     *clickingUP2
         name:Big clicks
-        desc:Anything that's big is better.<//><b>Effect:</b><.>Clicking is <b>10 times</b> as efficient.
+        desc:Anything that's big is better.<//><b>Effect:</b><.>Clicking is <b>twice</b> as efficient.
         cost:1000000 coin
-        passive:multiply yield of click by 10
+        passive:multiply yield of click by 2
         req:100000 coin:earned
         tag:upgrade
         icon:icons[0,1]
