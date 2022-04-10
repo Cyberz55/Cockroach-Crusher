@@ -1168,9 +1168,9 @@ Upgrades
  
     *clickingUP1
         name:Fast clicking
-        desc:Who said we can't click fast?<//><b>Effect:</b><.>Clicking is <b>5 times</b> as efficient.
+        desc:Who said we can't click fast?<//><b>Effect:</b><.>Clicking is <b>twice</b> as efficient.
         cost:10000 coin
-        passive:multiply yield of click by 5
+        passive:multiply yield of click by 2
         req:10000 coin:earned
         tag:upgrade
         icon:icons[0,0]
