@@ -509,7 +509,7 @@ Upgrades
         name:Sacrifice for 2nd Roach Rune
         desc:It's getting much harder to kill the cockroaches, even prestiging can only do so much! Luckily, you can <b>sacrifice</b> everything in return for <b>roach runes</b>, which can multiply cockroach and coin production by <b>x5</b> for each one you own!<//><b>What you lose:</b><//><.>All upgrades including prestige upgrades<.>All buildings<.>coins<.>roach souls<//><q>Some things are worth giving up for.</q>
         cost:0 coin
-        req:2000 roachSoul, 1 timesSacrificed
+        req:20000 roachSoul, 1 timesSacrificed
         on earn:yield 1 roachRune
         on earn:yield 1 timesSacrificed
         on earn:lose prestige
@@ -536,7 +536,7 @@ Upgrades
         name:Sacrifice for 3rd Roach Rune
         desc:It's getting much harder to kill the cockroaches, even prestiging can only do so much! Luckily, you can <b>sacrifice</b> everything in return for <b>roach runes</b>, which can multiply cockroach and coin production by <b>x10</b> for each one you own!<//><b>What you lose:</b><//><.>All upgrades including prestige upgrades<.>All buildings<.>coins<.>roach souls<//><q>Some things are worth giving up for.</q>
         cost:0 coin
-        req:3000 roachSoul, 2 timesSacrificed
+        req:400000 roachSoul, 2 timesSacrificed
         on earn:yield 1 roachRune
         on earn:yield 1 timesSacrificed
         on earn:lose prestige
@@ -1016,20 +1016,20 @@ Upgrades
  
     *researchUP2
         name:The Big BOOM
-        desc:It all started, with a huge explosion... that wiped out half of the cockroaches population.<//><b>Effect:</b><.>Buildings that can explode cockroaches are <b>5 times</b> as efficient.
+        desc:It all started, with a huge explosion... that wiped out half of the cockroaches population.<//><b>Effect:</b><.>Buildings that can explode cockroaches are <b>2.5 times</b> as efficient.
         cost:100000000 roachSoul
-        passive:multiply yield of bomb by 5
-        passive:multiply yield of mine by 5
-        passive:multiply yield of missile by 5
-        passive:multiply yield of hod by 5
+        passive:multiply yield of bomb by 2.5
+        passive:multiply yield of mine by 2.5
+        passive:multiply yield of missile by 2.5
+        passive:multiply yield of hod by 2.5
         req:prestigeUP12
         icon:icons[9,9]
  
     *researchUP3
         name:BC
-        desc:Stands for before cockroaches, a happier time.<//><b>Effect:</b><.>Time Travel Blasters are <b>4 times</b> as efficient.
+        desc:Stands for before cockroaches, a happier time.<//><b>Effect:</b><.>Time Travel Blasters are <b>2 times</b> as efficient.
         cost:250000000 roachSoul
-        passive:multiply yield of ttb by 4
+        passive:multiply yield of ttb by 2
         req:prestigeUP12
         icon:https://pipe.miroware.io/5f1b4446e0665551b1b22fca/time.png
  
@@ -1045,10 +1045,10 @@ Upgrades
  
     *researchUP5
         name:Wormhole clicking
-        desc:Send these little buggers through different dimensions by clicking.<//><b>Effect:</b><.>Clicking is <b>twice</b> as efficient.<.>Humans are <b>8 times</b> as efficient.
+        desc:Send these little buggers through different dimensions by clicking.<//><b>Effect:</b><.>Clicking is <b>twice</b> as efficient.<.>Humans are <b>4 times</b> as efficient.
         cost:500000000 roachSoul
         passive:multiply yield of click by 2
-        passive:multiply yield of human by 8
+        passive:multiply yield of human by 4
         req:prestigeUP13
         icon:icons[0,31]
  
