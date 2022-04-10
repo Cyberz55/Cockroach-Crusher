@@ -1168,18 +1168,18 @@ Upgrades
  
     *clickingUP1
         name:Fast clicking
-        desc:Who said we can't click fast?<//><b>Effect:</b><.>Clicking is <b>25 times</b> as efficient.
+        desc:Who said we can't click fast?<//><b>Effect:</b><.>Clicking is <b>20 times</b> as efficient.
         cost:10000 coin
-        passive:multiply yield of click by 25
+        passive:multiply yield of click by 20
         req:10000 coin:earned
         tag:upgrade
         icon:icons[0,0]
  
     *clickingUP2
         name:Big clicks
-        desc:Anything that's big is better.<//><b>Effect:</b><.>Clicking is <b>25 times</b> as efficient.
+        desc:Anything that's big is better.<//><b>Effect:</b><.>Clicking is <b>20 times</b> as efficient.
         cost:1000000 coin
-        passive:multiply yield of click by 25
+        passive:multiply yield of click by 20
         req:100000 coin:earned
         tag:upgrade
         icon:icons[0,1]
